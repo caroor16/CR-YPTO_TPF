@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Vistas\inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vistas\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vistas\registrarse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vistas\vistas_inicio\frmAvisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vistas\vistas_inicio\frmCrypto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vistas\vistas_inicio\frmFavoritos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vistas\vistas_inicio\frmModoUso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Vistas\vistas_inicio\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
