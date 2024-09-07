@@ -19,7 +19,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 		fachada fachada = new fachada();
 
 
-		NumberFormatInfo provider = new NumberFormatInfo();
+		NumberFormatInfo provider = new NumberFormatInfo();  //para dar formato a los números
 		public frmFavoritos()
 		{
 			InitializeComponent();

@@ -25,7 +25,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 
 		private void frmCrypto_Load(object sender, EventArgs e) { }
 
-		public void datosCryptos()  //de las cryptos que el usuario tiene como favoritas
+		public void datosCryptos()  //de las cryptos
 		{
 			try
 			{

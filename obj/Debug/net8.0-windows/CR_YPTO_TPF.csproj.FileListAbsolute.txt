@@ -161,3 +161,4 @@ C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\b
 C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\bin\Debug\net8.0-windows\ScottPlot.dll
 C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\bin\Debug\net8.0-windows\ScottPlot.WinForms.dll
 C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\obj\Debug\net8.0-windows\CR_YPTO_TPF.Vistas.vistas_inicio.frmModoUso.resources
+C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\obj\Debug\net8.0-windows\CR_YPTO_TPF.sourcelink.json

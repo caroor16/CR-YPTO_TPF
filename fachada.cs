@@ -197,7 +197,7 @@ namespace CR_YPTO_TPF
 
 		
 
-		//			VENTANA CRYPTO  (ver todas las criptos ¿y/o una en especial?)  
+		//			VENTANA CRYPTO  (ver todas las criptos y/o una en especial)  
 
 		//todas las criptomonedas
 		public List<crypto> GetCryptosTodas()
