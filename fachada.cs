@@ -11,6 +11,9 @@ using System.Text;
 using CR_YPTO_TPF.Modelo;
 using CR_YPTO_TPF.Api.excepciones;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using Microsoft.VisualBasic.Logging;
+using System.Net.Http;
+
 
 namespace CR_YPTO_TPF
 {
@@ -18,9 +21,12 @@ namespace CR_YPTO_TPF
 	{
 		//CryptoService interaccionCrypto = new CryptoService();
 
+		log log = new log(@"C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\log");
 		// ######################### MÉTODOS BÁSICOS DEL USUARIO #####################
 		// Obtener el usuario actual
 		
+		
+
 		public usuario GetUsuarioActual()
 		{
 			AppDbContext context = new AppDbContext();
@@ -41,7 +47,7 @@ namespace CR_YPTO_TPF
 		{
 			using (IUnitOfWork bUoW = new UnitOfWork(new AppDbContext()))
 			{
-				usuario ousuario = new usuario(idUsuario, nombre, apellido, correo, clave, 0, true);
+				usuario ousuario = new usuario(idUsuario, nombre, apellido, correo, clave, 0, false);
 				bUoW.UsuarioRepository.Add(ousuario);
 				bUoW.Complete();
 			}
@@ -78,6 +84,7 @@ namespace CR_YPTO_TPF
 				{
 					usuario.activo = false;
 					MessageBox.Show("Sesión finalizada");
+
 				}
 			}
 			context.SaveChanges();
@@ -139,6 +146,7 @@ namespace CR_YPTO_TPF
 
 		//			###########  VENTANA FAVORITOS  (cryptos agregadas a favoritos - se puede agregar o eliminar selección)  
 
+	
 		public void AgregarCryptoFav(string idUsuario, string idCrypto)
 		{
 			using (IUnitOfWork bUoW = new UnitOfWork(new AppDbContext()))
@@ -157,50 +165,86 @@ namespace CR_YPTO_TPF
 			}
 		}
 
-		//historial de las criptomonedas
-		public List<cryptohistoria> GetHistorial(string cripto)
+		public void EliminarCryptoFav(string idUsuario, string idCrypto)
 		{
-			try
+			using (IUnitOfWork bUoW = new UnitOfWork(new AppDbContext()))
 			{
-				var user = GetUsuarioActual();
-				// Interacción con la API
-				CryptoService interaccionApi = new CryptoService();  
-				var historial = interaccionApi.Get6MesesHistorial(user.idUsuario, cripto);
-				return historial;
-			}
-			catch (WebException ex)
-			{
-				if (ex.Response is null)
-				{
+				// Usamos el repositorio para eliminar el favorito
+				var usCryptoRepository = new UsCryptoRepository(new AppDbContext());
+				usCryptoRepository.EliminarFavorito(idUsuario, idCrypto);
+				bUoW.Complete();
 
-					throw new ExcepcionesApi("Error con el servicio de criptomonedas");
-				}
-				else
-				{
-					WebResponse mErrorResponse = ex.Response;
-					using (Stream mResponseStream = mErrorResponse.GetResponseStream())
-					{
-						StreamReader mReader = new StreamReader(mResponseStream, Encoding.GetEncoding("utf-8"));
-						//String mErrorText = mReader.ReadToEnd();
-						List<cryptohistoria> empty = new List<cryptohistoria>();
-						return empty;
-
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Error: {0} " + ex.Message);
-				throw new ExcepcionesApi("Error de conexión con el servicio, intente mas tarde");
 			}
 		}
 
+		public List<usuariocrypto> ObtenerListaFavoritas()
+		{
+			usuario user = GetUsuarioActual();
+			AppDbContext context = new AppDbContext();
+			UsCryptoRepository repoUsCr = new UsCryptoRepository(context);
+			return repoUsCr.GetCriptosFav(user.idUsuario);
+		}
+
+		// Verificar si la cripto ya está en los favoritos
+		public bool ExisteCripto(string criptoId)
+		{
+			// Obtener todas las criptomonedas favoritas del usuario
+			var criptosFavoritas = ObtenerListaFavoritas();
+
+			// Comprobar si la cripto ingresada ya está en la lista de favoritas
+			return criptosFavoritas.Any(uc => uc.idCrypto == criptoId);
+		}
+
+		public List<cryptoDTO> CompararListaFavoritas(usuario usuario)
+		{
+			try
+			{
+				List<usuariocrypto> listaFavoritos = ObtenerListaFavoritas();
+
+				//Verificamos que el usuario tenga criptos favoritas
+				if (listaFavoritos == null || !listaFavoritos.Any())
+				{
+					return new List<cryptoDTO>(); // Si no tiene favoritas, devolvemos una lista vacía
+				}
+
+				// Convertimos la lista de usuariocrypto a una lista de IDs de criptomonedas (string)
+				List<string> listaIdsCriptos = listaFavoritos
+					.Select(uc => uc.idCrypto)
+					.ToList();
+
+				//Interactuamos con la API para obtener los detalles de las criptomonedas favoritas
+				CryptoService interaccionCrypto = new CryptoService();
+				var listaCryptos = interaccionCrypto.GetFavCryptos(listaIdsCriptos);
+
+				return listaCryptos;
+			}
+			catch (WebException ex)
+			{
+				log.logger("Error: {0} " + ex.Message);
+				DesactivarSesion();
+				throw new ExcepcionesApi("Error: {0} " + ex.Message);
+			}
+			catch (Exception ex)
+			{
+				//MessageBox.Show("Error: {0} " + ex.Message);
+				log.logger("Error: {0} " + ex.Message);
+				DesactivarSesion();
+				throw new ExcepcionesApi("Error de conexión con el servicio, intente más tarde"); 
+			}
+		}
+		// interactúa con el servicio de criptos y retorna el historial
+		public List<cryptohistoria> ObtenerHistorialCripto(string idCrypto)
+		{
+			usuario user = GetUsuarioActual();
+			CryptoService cryptoService = new CryptoService();
+			return cryptoService.GetHistorial(user.idUsuario, idCrypto);
+		}
 		
 
 		//			VENTANA CRYPTO  (ver todas las criptos y/o una en especial)  
 
 		//todas las criptomonedas
-		public List<crypto> GetCryptosTodas()
+		public List<cryptoDTO> GetCryptosTodas()
 		{
 			try
 			{
@@ -209,56 +253,20 @@ namespace CR_YPTO_TPF
 			}
 			catch (WebException ex)
 			{
-				return ManejarExcepcionApi(ex);
+				log.logger("Error: {0} " + ex.Message);
+				DesactivarSesion();
+				throw new ExcepcionesApi("Error: {0} " + ex.Message);
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("Error: {0} " + ex.Message);
+				log.logger("Error: {0} " + ex.Message);
+				//MessageBox.Show("Error: {0} " + ex.Message);
+				DesactivarSesion();
 				throw new ExcepcionesApi("Error de conexión con el servicio, intente mas tarde");
 			}
 
 		}
 
-
-		//								 ########### EXTRA ###########	
-
-		///panel de mensajes
-		public void MostrarMensajeEnPanel(Panel panel, string mensaje, Color color)
-		{
-			panel.Controls.Clear();
-			// Crea un Label para mostrar el mensaje
-			Label lblMensaje = new Label();
-
-			// Centrar el Label dentro del Panel
-			lblMensaje.Location = new Point(10, 10);
-
-			// Configura las propiedades del Label
-			lblMensaje.Text = mensaje;
-			lblMensaje.AutoSize = true;
-			lblMensaje.ForeColor = color;
-			lblMensaje.Font = new Font("Arial", 9, FontStyle.Bold);
-
-
-			panel.Controls.Add(lblMensaje);
-		}
-
-		//Errores API
-		private List<crypto> ManejarExcepcionApi(WebException ex)
-		{
-			if (ex.Response == null)
-			{
-				MessageBox.Show("Error: no hubo respuesta del servicio");
-				throw new ExcepcionesApi("Se ha producido un error con el servicio de datos de Criptomonedas, intente más tarde");
-			}
-
-			using (Stream mResponseStream = ex.Response.GetResponseStream())
-			{
-				StreamReader mReader = new StreamReader(mResponseStream, Encoding.GetEncoding("utf-8"));
-				string mErrorText = mReader.ReadToEnd();
-				MessageBox.Show("Error de API: " + mErrorText);
-				return new List<crypto>(); // Retorna lista vacía si hay error
-			}
-		}
 
 	}
 }

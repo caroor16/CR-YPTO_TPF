@@ -14,6 +14,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 		//public static extern bool ReleaseCapture();
 		private readonly ICryptoService _cryptoService;
 		fachada fachada = new fachada();
+		log log = new log(@"C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\log");
 		NumberFormatInfo provider = new NumberFormatInfo();
 
 		public frmCrypto()
@@ -89,21 +90,23 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			
 			try
 			{	
-				fachada.MostrarMensajeEnPanel(panel1, "", Color.White); // para q en cada intento se borre
+				MostrarMensajeEnPanel(panel1, "", Color.White); // para q en cada intento se borre
 				//obtiene el historial de las criptos
-				var respuesta = fachada.GetHistorial(textidcrypto.Text.ToLower());
+				var respuesta = fachada.ObtenerHistorialCripto(textidcrypto.Text.ToLower());
 				if (textidcrypto.Text.ToLower() == "")
 				{
-					fachada.MostrarMensajeEnPanel(panel1, "Debe ingresar el ID de una criptomoneda", Color.Red);
+					log.logger("Debe ingresar el ID de una criptomoneda");
+					MostrarMensajeEnPanel(panel1, "Debe ingresar el ID de una criptomoneda", Color.Red);
 				}
 				else if (respuesta.Count == 0 ) //verifica si se encontraron resultados
 				{
-					fachada.MostrarMensajeEnPanel(panel1, "No se encontró la criptomoneda ingresada", Color.Red);
+					log.logger("No se encontró la criptomoneda ingresada");
+					MostrarMensajeEnPanel(panel1, "No se encontró la criptomoneda ingresada", Color.Red);
 				}
 				else
 				{
 					//si encuentra
-					fachada.MostrarMensajeEnPanel(panel1, "", Color.White); //para que elimine los mensajes anteriores
+					MostrarMensajeEnPanel(panel1, "", Color.White); //para que elimine los mensajes anteriores
 
 					PlotGeneral.Plot.Clear(); // Limpia el gráfico antes de agregar nuevos datos
 					int i = 0;
@@ -148,7 +151,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 					dataGridView1.Columns["idCryptoHistoria"].Visible = false;
 					dataGridView1.Columns["idUsuario"].Visible = false;
 					PlotGeneral.Refresh();
-					fachada.MostrarMensajeEnPanel(panel1, "Crypto encontrada", Color.Blue);
+					MostrarMensajeEnPanel(panel1, "Crypto encontrada", Color.Blue);
 
 				}
 
@@ -160,6 +163,30 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 				Application.Exit();
 			}
 		}
+
+
+		//								 ########### EXTRA ###########	
+
+		///panel de mensajes
+		public void MostrarMensajeEnPanel(Panel panel, string mensaje, Color color)
+		{
+			panel.Controls.Clear();
+			// Crea un Label para mostrar el mensaje
+			Label lblMensaje = new Label();
+
+			// Centrar el Label dentro del Panel
+			lblMensaje.Location = new Point(10, 10);
+
+			// Configura las propiedades del Label
+			lblMensaje.Text = mensaje;
+			lblMensaje.AutoSize = true;
+			lblMensaje.ForeColor = color;
+			lblMensaje.Font = new Font("Arial", 9, FontStyle.Bold);
+
+
+			panel.Controls.Add(lblMensaje);
+		}
+
 
 		private void btnMostrar_Click(object sender, EventArgs e)
 		{

@@ -34,10 +34,10 @@ namespace CR_YPTO_TPF.Domain
 
 		// Verificar si la cripto ya está en los favoritos ##
 		//se usa usuariocrypto para verificar si esa cripto ya está en la lista de favoritos del usuario
-		public bool ExisteCripto(string cripto)
-		{
-			return CriptomonedasFavoritas.Any(uc => uc.idCrypto == cripto);
-		}
+		//public bool ExisteCripto(string cripto)
+		//{
+		//	return CriptomonedasFavoritas.Any(uc => uc.idCrypto == cripto);
+		//}
 
 		
 	}

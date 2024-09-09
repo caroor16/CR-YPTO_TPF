@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using CR_YPTO_TPF.DAL;
 using CR_YPTO_TPF.DAL.framework;
 using Microsoft.Data.SqlClient;
+using ScottPlot.Renderable;
 
 namespace CR_YPTO_TPF.Vistas
 {
@@ -12,6 +13,7 @@ namespace CR_YPTO_TPF.Vistas
 	{
 		
 		fachada fachada = new fachada();
+		log log = new log(@"C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\log");
 		public static extern bool ReleaseCapture();
 		public Login()
 		{
@@ -23,12 +25,12 @@ namespace CR_YPTO_TPF.Vistas
 		{
 			if (textusuario.Text.Length == 0)
 			{
-				fachada.MostrarMensajeEnPanel(panel1, "Debe ingresar un usuario.", Color.Red);
+				MostrarMensajeEnPanel(panel1, "Debe ingresar un usuario.", Color.Red);
 				return;
 			}
 			else if (textclave.Text.Length == 0)
 			{
-				fachada.MostrarMensajeEnPanel(panel1, "Debe ingresar una contraseña.", Color.Red);
+				MostrarMensajeEnPanel(panel1, "Debe ingresar una contraseña.", Color.Red);
 				return;
 			}
 			else
@@ -41,12 +43,12 @@ namespace CR_YPTO_TPF.Vistas
 					if (ousuario == null)
 					{
 						// Si el usuario no existe
-						fachada.MostrarMensajeEnPanel(panel1, "El usuario no existe.", Color.Red);
+						MostrarMensajeEnPanel(panel1, "El usuario no existe.", Color.Red);
 					}
 					else if (ousuario.clave != textclave.Text)
 					{
 						// Si la clave es incorrecta
-						fachada.MostrarMensajeEnPanel(panel1, "La clave es incorrecta.", Color.Red);
+						MostrarMensajeEnPanel(panel1, "La clave es incorrecta.", Color.Red);
 					}
 					else
 					{
@@ -63,11 +65,13 @@ namespace CR_YPTO_TPF.Vistas
 				}
 				catch (SqlException sqlEx) // Captura las excepciones de SQL
 				{
+					log.logger("Error en la conexión a la base de datos. Por favor, verifica la configuración.");
 					MessageBox.Show("Error en la conexión a la base de datos. Por favor, verifica la configuración.");
 				}
 				catch (Exception ex)
 				{
 					// Manejar cualquier otro tipo de error
+					log.logger("Error: " + ex.Message);
 					MessageBox.Show("Error: " + ex.Message);
 				}
 			}
@@ -100,8 +104,28 @@ namespace CR_YPTO_TPF.Vistas
 			this.Show();
 		}
 
-		
 
+		//								 ########### EXTRA ###########	
+
+		///panel de mensajes
+		public void MostrarMensajeEnPanel(Panel panel, string mensaje, Color color)
+		{
+			panel.Controls.Clear();
+			// Crea un Label para mostrar el mensaje
+			Label lblMensaje = new Label();
+
+			// Centrar el Label dentro del Panel
+			lblMensaje.Location = new Point(10, 10);
+
+			// Configura las propiedades del Label
+			lblMensaje.Text = mensaje;
+			lblMensaje.AutoSize = true;
+			lblMensaje.ForeColor = color;
+			lblMensaje.Font = new Font("Arial", 9, FontStyle.Bold);
+
+
+			panel.Controls.Add(lblMensaje);
+		}
 
 	}
 }

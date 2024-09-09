@@ -15,7 +15,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 	public partial class frmUsuario : Form
 	{
 		fachada fachada = new fachada();
-		
+
 		public frmUsuario()
 		{
 			InitializeComponent();
@@ -46,7 +46,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			{
 				if (!Regex.IsMatch(textCorreoNuevo.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
 				{
-					fachada.MostrarMensajeEnPanel(panel1, "Por favor, ingrese un correo electrónico válido.", Color.Red);
+					MostrarMensajeEnPanel(panel1, "Por favor, ingrese un correo electrónico válido.", Color.Red);
 					return;
 				}
 				else
@@ -61,7 +61,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			{
 				if (textClaveNuevo.Text.Length < 6)
 				{
-					fachada.MostrarMensajeEnPanel(panel1, "La clave debe tener al menos 6 caracteres.", Color.Red);
+					MostrarMensajeEnPanel(panel1, "La clave debe tener al menos 6 caracteres.", Color.Red);
 					return;
 				}
 				else
@@ -76,7 +76,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			{
 				if (!double.TryParse(textUmbralNuevo.Text, out double umbral))
 				{
-					fachada.MostrarMensajeEnPanel(panel1, "El umbral debe ser un número.", Color.Red);
+					MostrarMensajeEnPanel(panel1, "El umbral debe ser un número.", Color.Red);
 					return;
 				}
 				else
@@ -90,13 +90,13 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 
 			if (datosModificados)
 			{
-				fachada.MostrarMensajeEnPanel(panel1, "", Color.White); //eliminar los mensajes extras
+				MostrarMensajeEnPanel(panel1, "", Color.White); //eliminar los mensajes extras
 				//datosActuales();
 				MessageBox.Show("Datos modificados con éxito.");
 			}
 			else
 			{
-				fachada.MostrarMensajeEnPanel(panel1, "Debe modificar al menos un dato para guardar cambios.", Color.Red);
+				MostrarMensajeEnPanel(panel1, "Debe modificar al menos un dato para guardar cambios.", Color.Red);
 			}
 
 		}
@@ -107,23 +107,45 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			var usuario = fachada.GetUsuarioActual();
 			
 			// Usuario
-			fachada.MostrarMensajeEnPanel(panelId, usuario.idUsuario, Color.Gainsboro);
+			MostrarMensajeEnPanel(panelId, usuario.idUsuario, Color.Gainsboro);
 
 			// Nombre
-			fachada.MostrarMensajeEnPanel(panelN, usuario.nombre, Color.White);
+			MostrarMensajeEnPanel(panelN, usuario.nombre, Color.White);
 
 			// Apellido
-			fachada.MostrarMensajeEnPanel(panelA, usuario.apellido, Color.White);
+			MostrarMensajeEnPanel(panelA, usuario.apellido, Color.White);
 
 			// Umbral
-			fachada.MostrarMensajeEnPanel(panelU, usuario.umbral.ToString(), Color.White);
+			MostrarMensajeEnPanel(panelU, usuario.umbral.ToString(), Color.White);
 
 			//correo
-			fachada.MostrarMensajeEnPanel(panelC, usuario.correo, Color.White);
+			MostrarMensajeEnPanel(panelC, usuario.correo, Color.White);
 
 			// Clave
 			string clave = new string('*', usuario.clave.Length);
-			fachada.MostrarMensajeEnPanel(panelCl, clave, Color.White);
+			MostrarMensajeEnPanel(panelCl, clave, Color.White);
+		}
+
+		//								 ########### EXTRA ###########	
+
+		///panel de mensajes
+		public void MostrarMensajeEnPanel(Panel panel, string mensaje, Color color)
+		{
+			panel.Controls.Clear();
+			// Crea un Label para mostrar el mensaje
+			Label lblMensaje = new Label();
+
+			// Centrar el Label dentro del Panel
+			lblMensaje.Location = new Point(10, 10);
+
+			// Configura las propiedades del Label
+			lblMensaje.Text = mensaje;
+			lblMensaje.AutoSize = true;
+			lblMensaje.ForeColor = color;
+			lblMensaje.Font = new Font("Arial", 9, FontStyle.Bold);
+
+
+			panel.Controls.Add(lblMensaje);
 		}
 
 

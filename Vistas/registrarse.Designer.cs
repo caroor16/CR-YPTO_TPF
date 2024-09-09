@@ -177,9 +177,9 @@
 			// 
 			// panel1
 			// 
-			panel1.Location = new Point(402, 325);
+			panel1.Location = new Point(378, 315);
 			panel1.Name = "panel1";
-			panel1.Size = new Size(319, 51);
+			panel1.Size = new Size(357, 61);
 			panel1.TabIndex = 19;
 			// 
 			// iconPictureBox1

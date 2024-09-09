@@ -10,9 +10,9 @@ namespace CR_YPTO_TPF.Api
 {
 	public interface ICryptoService
 	{
-		List<crypto> GetFavCryptos(List<String> pLista);
+		List<cryptoDTO> GetFavCryptos(List<String> pLista);
 
-		List<crypto> GetAllCryptos();
+		List<cryptoDTO> GetAllCryptos();
 
 		//List<cryptohistoria> Get6MonthHistoryFrom(string cripto);
 	}

@@ -34,9 +34,6 @@ namespace CR_YPTO_TPF
 		{
 			var services = new ServiceCollection();
 
-			//// Configuración de servicios de logging
-			//services.AddLogging(configure => configure.AddConsole());
-
 			// Registrar DbContext sin cadena de conexión explícita, ya que se configura en AppDbContext
 			services.AddDbContext<AppDbContext>();
 

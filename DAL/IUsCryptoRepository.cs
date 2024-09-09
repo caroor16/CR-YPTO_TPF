@@ -10,6 +10,6 @@ namespace CR_YPTO_TPF.DAL
 {
 	public interface IUsCryptoRepository
 	{
-		void favoritosUs(usuariocrypto favorito);
+		//void favoritosUs(usuariocrypto favorito);
 	}
 }

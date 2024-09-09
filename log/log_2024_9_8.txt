@@ -1,0 +1,2 @@
+08/09/2024 22:21:15 - Error: {0} The remote server returned an error: (429) Too Many Requests.
+08/09/2024 22:21:15 - Error de API: You exceeded your 20 request(s) rate limit of your FREE plan

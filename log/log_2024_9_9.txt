@@ -1,0 +1,12 @@
+09/09/2024 9:17:49 - Error al agregar la cripto: An error occurred while saving the entity changes. See the inner exception for details.
+09/09/2024 9:18:07 - Error al agregar la cripto: An error occurred while saving the entity changes. See the inner exception for details.
+09/09/2024 9:20:27 - Error: {0} An error occurred while sending the request.
+09/09/2024 9:20:27 - Error Api: {0} Error con el servicio de criptomonedas
+09/09/2024 9:26:18 - Error al agregar la cripto: An error occurred while saving the entity changes. See the inner exception for details.
+09/09/2024 9:26:39 - Error al agregar la cripto: An error occurred while saving the entity changes. See the inner exception for details.
+09/09/2024 9:29:28 - Error al agregar la cripto: An error occurred while saving the entity changes. See the inner exception for details.
+09/09/2024 9:34:22 - Error al agregar la cripto: An error occurred while saving the entity changes. See the inner exception for details.
+09/09/2024 11:47:42 - Error: {0} The remote server returned an error: (429) Too Many Requests.
+09/09/2024 11:47:42 - Error al agregar la cripto: Error: {0} The remote server returned an error: (429) Too Many Requests.
+09/09/2024 11:48:24 - No se encontró la criptomoneda ingresada
+09/09/2024 11:48:57 - Error: {0} The remote server returned an error: (429) Too Many Requests.
