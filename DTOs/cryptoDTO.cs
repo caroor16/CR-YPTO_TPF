@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CR_YPTO_TPF.Modelo
+namespace CR_YPTO_TPF.DTOs
 {
 	public class cryptoDTO
 	{
@@ -17,7 +17,7 @@ namespace CR_YPTO_TPF.Modelo
 		private string iPriceUSD;
 		private string iSymbol;
 		private string iChangePercent24hs;
-		
+
 		public cryptoDTO(string pid, string pName, string pRank, string pPriceUSD, string pSymbol, string pChangePercent)
 		{
 			iId = pid;
@@ -57,7 +57,7 @@ namespace CR_YPTO_TPF.Modelo
 			get { return iChangePercent24hs; }
 			set { iChangePercent24hs = value; }
 		}
-	
+
 
 	}
 }

@@ -1,4 +1,4 @@
-﻿using CR_YPTO_TPF.Modelo;
+﻿using CR_YPTO_TPF.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

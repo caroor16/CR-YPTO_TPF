@@ -60,9 +60,9 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			{
 				try
 				{
-					
 					fachada.AgregarCryptoFav(objetoUsuario.idUsuario, criptoId);  //la agrega a favoritos
 					MostrarMensajeEnPanel(panel1, "La crypto fue agregada a favoritos", Color.Green);
+					
 
 					//Grafico
 					formsPlotFav.Plot.Clear(); // Limpia el gráfico antes de agregar nuevos datos

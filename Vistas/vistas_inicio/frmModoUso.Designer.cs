@@ -31,7 +31,7 @@
 			components = new System.ComponentModel.Container();
 			label1 = new Label();
 			label2 = new Label();
-			panel1 = new Panel();
+			panelID = new Panel();
 			label3 = new Label();
 			label5 = new Label();
 			label4 = new Label();
@@ -76,13 +76,13 @@
 			label2.TabIndex = 1;
 			label2.Text = "BIENVENIDO USUARIO:";
 			// 
-			// panel1
+			// panelID
 			// 
-			panel1.BackColor = Color.SteelBlue;
-			panel1.Location = new Point(299, 23);
-			panel1.Name = "panel1";
-			panel1.Size = new Size(286, 53);
-			panel1.TabIndex = 2;
+			panelID.BackColor = Color.SteelBlue;
+			panelID.Location = new Point(299, 25);
+			panelID.Name = "panelID";
+			panelID.Size = new Size(286, 53);
+			panelID.TabIndex = 2;
 			// 
 			// label3
 			// 
@@ -291,7 +291,7 @@
 			Controls.Add(label4);
 			Controls.Add(label5);
 			Controls.Add(label3);
-			Controls.Add(panel1);
+			Controls.Add(panelID);
 			Controls.Add(label2);
 			Controls.Add(label1);
 			Name = "frmModoUso";
@@ -307,7 +307,7 @@
 
 		private Label label1;
 		private Label label2;
-		private Panel panel1;
+		private Panel panelID;
 		private Label label3;
 		private Label label5;
 		private Label label4;

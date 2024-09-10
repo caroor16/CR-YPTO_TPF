@@ -75,7 +75,7 @@
 			dataGridView1.AllowUserToOrderColumns = true;
 			dataGridView1.BackgroundColor = Color.White;
 			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridView1.Location = new Point(46, 510);
+			dataGridView1.Location = new Point(46, 493);
 			dataGridView1.Name = "dataGridView1";
 			dataGridView1.RowHeadersWidth = 51;
 			dataGridView1.Size = new Size(948, 200);

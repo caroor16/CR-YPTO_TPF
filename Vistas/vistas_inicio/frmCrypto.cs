@@ -11,8 +11,6 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 {
 	public partial class frmCrypto : Form
 	{
-		//public static extern bool ReleaseCapture();
-		private readonly ICryptoService _cryptoService;
 		fachada fachada = new fachada();
 		log log = new log(@"C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\log");
 		NumberFormatInfo provider = new NumberFormatInfo();
@@ -37,10 +35,10 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 				provider.NumberGroupSeparator = ",";
 				provider.NumberDecimalSeparator = ".";
 				PlotGeneral.Plot.Clear(); // Limpia el gráfico antes de agregar nuevos datos
-				var cryptosDTO = fachada.GetCryptosTodas();
+				//var cryptosDTO = fachada.GetCryptosTodas();
 				int i = 0;
 				List<ScottPlot.Plottable.Bar> bars = new();
-				foreach (var crypto in cryptosDTO)
+				foreach (var crypto in respuesta)
 				{
 					i++;
 					double value = double.Parse(crypto.PriceUSD, provider);
@@ -59,7 +57,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 				double[] positions = new double[i + 1];
 				string[] vacio = new string[i + 1];
 				int k = 0;
-				foreach (var crypto in cryptosDTO)
+				foreach (var crypto in respuesta)
 				{
 					k++;
 					positions[k] = k;
@@ -72,7 +70,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 				PlotGeneral.Plot.AddBarSeries(bars);
 				PlotGeneral.Plot.SetAxisLimitsY(0, 3500);
 				PlotGeneral.Plot.YLabel("Precio en USD");
-				PlotGeneral.Plot.XLabel("Cryptos");
+				PlotGeneral.Plot.XLabel("Criptomonedas");
 				PlotGeneral.Refresh();
 				int j = 0;
 

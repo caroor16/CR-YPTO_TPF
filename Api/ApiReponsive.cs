@@ -12,6 +12,7 @@ namespace CR_YPTO_TPF.Api
 {
 	public class ApiReponsive : IApiResponsive
 	{
+		log log = new log(@"C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\log");
 		public dynamic data;
 		public dynamic Data
 		{
@@ -24,22 +25,19 @@ namespace CR_YPTO_TPF.Api
 		}
 		public void GetAPIResponseItem(string mUrl)
 		{
+				// Se crea el request http
+				HttpWebRequest mRequest = (HttpWebRequest)WebRequest.Create(mUrl);
 
-			// Se crea el request http
-			HttpWebRequest mRequest = (HttpWebRequest)WebRequest.Create(mUrl);
-			
-			// Se ejecuta la consulta
-			WebResponse mResponse = mRequest.GetResponse();
-			// Se obtiene los datos de respuesta
-			Stream responseStream = mResponse.GetResponseStream();
-			StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
+				// Se ejecuta la consulta
+				WebResponse mResponse = mRequest.GetResponse();
+				// Se obtiene los datos de respuesta
+				Stream responseStream = mResponse.GetResponseStream();
+				StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
 
-			// Se parsea la respuesta y se serializa a JSON a un objeto dynamic
-			dynamic mResponseJSON = JsonConvert.DeserializeObject(reader.ReadToEnd());
-			//return mResponseJSON;
-			Data = mResponseJSON;
-			
-			
+				// Se parsea la respuesta y se serializa a JSON a un objeto dynamic
+				dynamic mResponseJSON = JsonConvert.DeserializeObject(reader.ReadToEnd());
+				//return mResponseJSON;
+				Data = mResponseJSON;
 		}
 	}
 }

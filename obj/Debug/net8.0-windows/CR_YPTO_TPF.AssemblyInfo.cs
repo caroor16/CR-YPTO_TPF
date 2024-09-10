@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("77fabb8a-69b4-4710-a23c-b204d59e9073")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("CR_YPTO_TPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d9bf994435451c64b844e81f8dba56669bdb3fe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74b6cee4c5b4a78064d8c31e849f09ecc78773db")]
 [assembly: System.Reflection.AssemblyProductAttribute("CR_YPTO_TPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CR_YPTO_TPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

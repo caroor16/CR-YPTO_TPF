@@ -217,6 +217,7 @@
 			Controls.Add(label2);
 			Controls.Add(label1);
 			Name = "registrarse";
+			StartPosition = FormStartPosition.CenterScreen;
 			Text = "registrarse";
 			((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
 			ResumeLayout(false);

@@ -10,3 +10,48 @@
 09/09/2024 11:47:42 - Error al agregar la cripto: Error: {0} The remote server returned an error: (429) Too Many Requests.
 09/09/2024 11:48:24 - No se encontró la criptomoneda ingresada
 09/09/2024 11:48:57 - Error: {0} The remote server returned an error: (429) Too Many Requests.
+09/09/2024 16:51:39 - Debe ingresar el id de una crypto
+09/09/2024 16:51:40 - Debe ingresar el id de una crypto
+09/09/2024 16:51:43 - Debe ingresar el id de una crypto
+09/09/2024 16:52:24 - Debe ingresar el ID de una criptomoneda
+09/09/2024 17:08:06 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
+09/09/2024 17:08:16 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
+09/09/2024 18:46:37 - Debe ingresar el id de una crypto
+09/09/2024 18:46:38 - Debe ingresar el id de una crypto
+09/09/2024 18:46:55 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
+09/09/2024 18:47:12 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
+09/09/2024 18:47:47 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
+09/09/2024 18:48:12 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
+09/09/2024 18:48:48 - Error: {0} Cannot perform runtime binding on a null reference
+09/09/2024 18:48:50 - No se encontró la criptomoneda ingresada
+09/09/2024 19:09:39 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
+09/09/2024 19:18:10 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
+09/09/2024 19:33:32 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
+09/09/2024 20:02:05 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
+09/09/2024 20:09:24 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
+09/09/2024 20:09:27 - Error: {0} Cannot perform runtime binding on a null reference
+09/09/2024 20:20:52 - Debe ingresar el id de una crypto
+09/09/2024 20:20:53 - Debe ingresar el id de una crypto
+09/09/2024 20:33:42 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
+09/09/2024 20:33:45 - Error: {0} Cannot perform runtime binding on a null reference
+09/09/2024 20:38:41 - Error 429: Demasiadas solicitudesAn error occurred while sending the request.
+09/09/2024 20:38:44 - Error: {0} Cannot perform runtime binding on a null reference
+09/09/2024 20:54:29 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
+09/09/2024 20:54:31 - Error: {0} Cannot perform runtime binding on a null reference
+09/09/2024 21:17:21 - Debe ingresar el id de una crypto
+09/09/2024 21:18:17 - Error 429: Demasiadas solicitudesThe remote server returned an error: (404) Not Found.
+09/09/2024 21:18:19 - Error: {0} Cannot perform runtime binding on a null reference
+09/09/2024 21:31:12 - Debe ingresar el id de una crypto
+09/09/2024 21:31:19 - Error 429: Demasiadas solicitudesThe remote server returned an error: (404) Not Found.
+09/09/2024 21:31:21 - Error: {0} Cannot perform runtime binding on a null reference
+09/09/2024 22:23:40 - Debe ingresar el id de una crypto
+09/09/2024 22:23:41 - Debe ingresar el id de una crypto
+09/09/2024 22:23:43 - Debe ingresar el id de una crypto
+09/09/2024 22:23:44 - Debe ingresar el id de una crypto
+09/09/2024 22:23:45 - Debe ingresar el id de una crypto
+09/09/2024 22:24:06 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
+09/09/2024 22:24:09 - Error: {0} Cannot perform runtime binding on a null reference
+09/09/2024 22:24:09 - Error al agregar la cripto: Error de conexión con el servicio
+09/09/2024 22:27:27 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
+09/09/2024 22:29:52 - Error 429: Demasiadas solicitudesAn error occurred while sending the request.
+09/09/2024 22:29:56 - Error: {0} Cannot perform runtime binding on a null reference

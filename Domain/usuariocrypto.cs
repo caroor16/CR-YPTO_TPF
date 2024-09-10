@@ -1,10 +1,9 @@
-﻿using CR_YPTO_TPF.Modelo;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CR_YPTO_TPF.Modelo;
+using CR_YPTO_TPF.DTOs;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations.Schema;
 

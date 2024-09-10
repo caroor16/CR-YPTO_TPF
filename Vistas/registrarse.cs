@@ -33,12 +33,15 @@ namespace CR_YPTO_TPF.Vistas
 			if (ValidarFormulario())
 			{			
 					fachada.AgregarNuevoUsuario(textusuarioreg.Text, textnombre.Text, textapellido.Text, textcorreo.Text, textclavereg.Text);
-					MostrarMensajeEnPanel(panel1, "Usuario registrado con éxito", Color.Green);
+					
 					textusuarioreg.Text = "";
 					textnombre.Text = "";
 					textapellido.Text = "";
 					textcorreo.Text = "";
 					textclavereg.Text = "";
+
+					MessageBox.Show("Usuario registrado con éxito");
+					this.Close();
 			}
 		}
 
