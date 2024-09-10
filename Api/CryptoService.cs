@@ -72,25 +72,33 @@ namespace CR_YPTO_TPF.Api
 			var seisMesesAtras = ((DateTimeOffset)(fechaActual.AddMonths(-6).ToUniversalTime())).ToUnixTimeMilliseconds(); //calcula la fecha
 			var conexionHistory = new ApiReponsive(); //se comunica con la api
 			
-			string historyUrl = String.Format(history, idCrypto);  // idCrypto se usa en la URL de la API
+			string historyUrl = String.Format(history, idCrypto);  // idCrypto se usa en la URL de la APIhttps://chatgpt.com/c/66dbf52e-8830-800e-8559-ee21c77d1e2f
 			conexionHistory.GetAPIResponseItem(historyUrl); //obtener respuesta de la api
 			DataAccessor = conexionHistory.Data; //asignamos el resultado
 
-			foreach (var bResponseItem in DataAccessor.data)
+			if (DataAccessor != null)
 			{
-				if ((bResponseItem.time) >= seisMesesAtras) //filtro por fecha
+				foreach (var bResponseItem in DataAccessor.data)
 				{
-					string precio = bResponseItem.priceUsd;
+					if ((bResponseItem.time) >= seisMesesAtras) //filtro por fecha
+					{
+						string precio = bResponseItem.priceUsd;
 
-					long tiempo = bResponseItem.time;
-					DateTimeOffset offset = DateTimeOffset.FromUnixTimeMilliseconds(tiempo);
-					DateTime convertido = offset.UtcDateTime.ToLocalTime();
+						long tiempo = bResponseItem.time;
+						DateTimeOffset offset = DateTimeOffset.FromUnixTimeMilliseconds(tiempo);
+						DateTime convertido = offset.UtcDateTime.ToLocalTime();
 
-					var elementoHistorial = new cryptohistoria(idUsuario, idCrypto, precio, convertido);
-					historial.Add(elementoHistorial);
+						var elementoHistorial = new cryptohistoria(idUsuario, idCrypto, precio, convertido);
+						historial.Add(elementoHistorial);
+					}
 				}
+				return historial;
 			}
-			return historial;
+			else
+			{
+				log.logger("La respuesta de la api es nula");
+				return historial; //devuelve una lista vacía
+			}
 		}
 
 

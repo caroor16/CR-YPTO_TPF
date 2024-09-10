@@ -25,6 +25,9 @@ namespace CR_YPTO_TPF.Api
 		}
 		public void GetAPIResponseItem(string mUrl)
 		{
+			try
+			{
+
 				// Se crea el request http
 				HttpWebRequest mRequest = (HttpWebRequest)WebRequest.Create(mUrl);
 
@@ -38,6 +41,16 @@ namespace CR_YPTO_TPF.Api
 				dynamic mResponseJSON = JsonConvert.DeserializeObject(reader.ReadToEnd());
 				//return mResponseJSON;
 				Data = mResponseJSON;
+			}
+			catch (WebException ex)
+			{
+				log.logger("Error: " + ex.Message);
+			}
+			catch (Exception ex)
+			{
+				log.logger("Error: " + ex.Message);
+				MessageBox.Show("Cargando...");
+			}
 		}
 	}
 }

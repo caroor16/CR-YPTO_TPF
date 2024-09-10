@@ -79,7 +79,7 @@
 			// panelID
 			// 
 			panelID.BackColor = Color.SteelBlue;
-			panelID.Location = new Point(299, 25);
+			panelID.Location = new Point(299, 30);
 			panelID.Name = "panelID";
 			panelID.Size = new Size(286, 53);
 			panelID.TabIndex = 2;

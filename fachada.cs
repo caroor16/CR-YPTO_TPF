@@ -13,6 +13,7 @@ using CR_YPTO_TPF.Api.excepciones;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using Microsoft.VisualBasic.Logging;
 using System.Net.Http;
+using System.Globalization;
 using System.Runtime.Caching;
 
 
@@ -143,12 +144,37 @@ namespace CR_YPTO_TPF
 
 
 		//		###########	VENTANA AVISOS   (notificaciones por correo y en pantalla)  
-		public IEnumerable<alerta> GetAlertas()
+		public List<(string criptoId, decimal cambio24hs)> GetAlertas()
 		{
-			AppDbContext context = new AppDbContext();
-			AlertaRepository repoAlertas = new AlertaRepository(context);
-			return repoAlertas.GetAll();
+			usuario user = GetUsuarioActual(); // Obtener datos del usuario actual
+			if (user == null) throw new InvalidOperationException("Usuario no encontrado.");
+
+			List<usuariocrypto> criptosFavoritas = ObtenerListaFavoritas(); // Obtener lista de criptos favoritas del usuario
+			List<cryptoDTO> cryptsTodas = GetCryptosTodas(); // Obtener todas las criptos
+
+			var criptosSuperanUmbral = new List<(string criptoId, decimal cambio24hs)>(); // Lista para criptos que superan el umbral
+
+			// Iterar sobre las criptos favoritas del usuario
+			foreach (var criptoFav in criptosFavoritas)
+			{
+				// Buscar la cripto favorita en la lista completa de criptos
+				var criptoDTO = cryptsTodas.FirstOrDefault(c => c.Id == criptoFav.idCrypto);
+
+				if (criptoDTO != null)
+				{
+					// Convertir el cambio porcentual a decimal y compara con el umbral
+					decimal cambio24hs = Convert.ToDecimal(criptoDTO.ChangePercent24hs, CultureInfo.InvariantCulture);
+					if (Math.Abs(cambio24hs) >= (decimal)user.umbral) // Convertir umbral a decimal para la comparación
+					{
+						// Agregar la cripto y el cambio a la lista si supera el umbral
+						criptosSuperanUmbral.Add((criptoDTO.Id, cambio24hs));
+					}
+				}
+			}
+
+			return criptosSuperanUmbral; // Retornar la lista con las criptos que superan el umbral
 		}
+
 
 
 		//			###########  VENTANA FAVORITOS  (cryptos agregadas a favoritos - se puede agregar o eliminar selección)  
@@ -261,7 +287,7 @@ namespace CR_YPTO_TPF
 				// Si no está en caché, hacemos la solicitud a la API
 				usuario user = GetUsuarioActual();
 				CryptoService cryptoService = new CryptoService();
-				var historial = cryptoService.GetHistorial(user.idUsuario, idCrypto);
+				var historial = cryptoService.Get6MesesHistorial(user.idUsuario, idCrypto);
 
 				// Guardamos el historial en caché por 12 horas
 				CacheItemPolicy policy = new CacheItemPolicy { AbsoluteExpiration = DateTimeOffset.Now.Add(_cacheDuracion) };

@@ -1,0 +1,4 @@
+10/09/2024 11:07:50 - Error: {0} Host desconocido. (api.coincap.io:443)
+10/09/2024 11:07:50 - Error mostrando alertas: Error: {0} Host desconocido. (api.coincap.io:443)
+10/09/2024 11:53:40 - Error: {0} The remote server returned an error: (429) Too Many Requests.
+10/09/2024 11:53:40 - Error mostrando alertas: Error: {0} The remote server returned an error: (429) Too Many Requests.

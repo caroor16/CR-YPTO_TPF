@@ -55,3 +55,4 @@
 09/09/2024 22:27:27 - Error 429: Demasiadas solicitudesThe remote server returned an error: (429) Too Many Requests.
 09/09/2024 22:29:52 - Error 429: Demasiadas solicitudesAn error occurred while sending the request.
 09/09/2024 22:29:56 - Error: {0} Cannot perform runtime binding on a null reference
+09/09/2024 23:35:10 - Error: {0} Host desconocido. (api.coincap.io:443)
