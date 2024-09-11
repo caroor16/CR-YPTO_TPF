@@ -146,8 +146,8 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 					PlotGeneral.Plot.YLabel("Precio en USD");
 					PlotGeneral.Plot.XLabel("Fecha y Hora");
 					dataGridView1.DataSource = respuesta;
-					dataGridView1.Columns["idCryptoHistoria"].Visible = false;
-					dataGridView1.Columns["idUsuario"].Visible = false;
+					//dataGridView1.Columns["idCryptoHistoria"].Visible = false;
+					//dataGridView1.Columns["idUsuario"].Visible = false;
 					PlotGeneral.Refresh();
 					MostrarMensajeEnPanel(panel1, "Crypto encontrada", Color.Blue);
 

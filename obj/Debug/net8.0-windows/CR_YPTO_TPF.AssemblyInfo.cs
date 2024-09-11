@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CR_YPTO_TPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+25bc5b3e63947e95fbf91070e4893ed4f4102eb8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9794ef06ba7d2b93254ac6fa88cddee5d9d6ace7")]
 [assembly: System.Reflection.AssemblyProductAttribute("CR_YPTO_TPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CR_YPTO_TPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

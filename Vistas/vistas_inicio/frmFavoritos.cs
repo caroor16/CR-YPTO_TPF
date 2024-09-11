@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using CR_YPTO_TPF.Domain;
 using System.Globalization;
 using CR_YPTO_TPF.Api;
+using CR_YPTO_TPF.DTOs;
 
 namespace CR_YPTO_TPF.Vistas.vistas_inicio
 {
@@ -53,7 +54,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			}
 
 			//obtenemos el usuario
-			usuario objetoUsuario = fachada.GetUsuarioActual();
+			usuarioDTO objetoUsuario = fachada.GetUsuarioActual();
 
 			//ya está como favorito?
 			if (!fachada.ExisteCripto(criptoId)) //si no está en favs
@@ -95,7 +96,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			}
 
 			//obtenemos el usuario
-			usuario objetoUsuario = fachada.GetUsuarioActual();
+			usuarioDTO objetoUsuario = fachada.GetUsuarioActual();
 
 			//ya está como favorito?
 			if (fachada.ExisteCripto(criptoId)) //si está en favs
@@ -129,7 +130,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 		public void mostrarDataFavoritas()
 		{
 			//obtenemos el usuario
-			usuario objetoUsuario = fachada.GetUsuarioActual();
+			usuarioDTO objetoUsuario = fachada.GetUsuarioActual();
 			//obtenemos las lista con todas las criptos favoritas
 			var listaCryptosFav = fachada.CompararListaFavoritas(objetoUsuario);
 

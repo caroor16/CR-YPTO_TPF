@@ -31,19 +31,50 @@ namespace CR_YPTO_TPF
 		
 		// ######################### MÉTODOS BÁSICOS DEL USUARIO #####################
 		// Obtener el usuario actual
-		public usuario GetUsuarioActual()
+		public usuarioDTO GetUsuarioActual()
 		{
 			AppDbContext context = new AppDbContext();
 			UsuarioRepository repoUsuario = new UsuarioRepository(context);
-			return repoUsuario.GetUsuarioActual();
+
+			var usuario = repoUsuario.GetUsuarioActual();
+
+			// Mapear Usuario a UsuarioDTO
+			return new usuarioDTO
+			{
+				idUsuario = usuario.idUsuario,
+				nombre = usuario.nombre,
+				apellido = usuario.apellido,
+				correo = usuario.correo,
+				clave = usuario.clave,
+				umbral = usuario.umbral,
+				activo = usuario.activo
+			};
 		}
 
 		// Obtener un usuario por su ID
-		public usuario GetUser(string pidUsuario)
+		public usuarioDTO GetUser(string pidUsuario)
 		{
 			AppDbContext context = new AppDbContext();
 			UsuarioRepository repoUsuario = new UsuarioRepository(context);
-			return repoUsuario.Get(pidUsuario);
+			var usuario = repoUsuario.Get(pidUsuario);
+
+			if (usuario == null)
+			{
+				//  no se encuentra el usuario
+				return null; 
+			}
+
+			// Mapear Usuario a UsuarioDTO
+			return new usuarioDTO
+			{
+				idUsuario = usuario.idUsuario,
+				nombre = usuario.nombre,
+				apellido = usuario.apellido,
+				correo = usuario.correo,
+				clave = usuario.clave,
+				umbral = usuario.umbral,
+				activo = usuario.activo
+			};
 		}
 
 		// Agregar un nuevo usuario
@@ -146,10 +177,10 @@ namespace CR_YPTO_TPF
 		//		###########	VENTANA AVISOS   (notificaciones por correo y en pantalla)  
 		public List<(string criptoId, decimal cambio24hs)> GetAlertas()
 		{
-			usuario user = GetUsuarioActual(); // Obtener datos del usuario actual
+			usuarioDTO user = GetUsuarioActual(); // Obtener datos del usuario actual
 			if (user == null) throw new InvalidOperationException("Usuario no encontrado.");
 
-			List<usuariocrypto> criptosFavoritas = ObtenerListaFavoritas(); // Obtener lista de criptos favoritas del usuario
+			List<usuariocryptoDTO> criptosFavoritas = ObtenerListaFavoritas(); // Obtener lista de criptos favoritas del usuario
 			List<cryptoDTO> cryptsTodas = GetCryptosTodas(); // Obtener todas las criptos
 
 			var criptosSuperanUmbral = new List<(string criptoId, decimal cambio24hs)>(); // Lista para criptos que superan el umbral
@@ -210,12 +241,21 @@ namespace CR_YPTO_TPF
 			}
 		}
 
-		public List<usuariocrypto> ObtenerListaFavoritas()
+		public List<usuariocryptoDTO> ObtenerListaFavoritas()
 		{
-			usuario user = GetUsuarioActual();
+			usuarioDTO user = GetUsuarioActual();
 			AppDbContext context = new AppDbContext();
 			UsCryptoRepository repoUsCr = new UsCryptoRepository(context);
-			return repoUsCr.GetCriptosFav(user.idUsuario);
+
+			// Obtener la lista de usuariocrypto
+			var listaUsuarioCrypto = repoUsCr.GetCriptosFav(user.idUsuario);
+
+			// Mapear la lista a UsuarioCryptoDTO
+			return listaUsuarioCrypto.Select(uc => new usuariocryptoDTO
+			{
+				idUsuario = uc.idUsuario,
+				idCrypto = uc.idCrypto
+			}).ToList();
 		}
 
 		// Verificar si la cripto ya está en los favoritos
@@ -230,12 +270,12 @@ namespace CR_YPTO_TPF
 
 
 		//compara entre todas las criptos (api) y las criptos favoritas del usuario (bdd)
-		public List<cryptoDTO> CompararListaFavoritas(usuario usuario)
+		public List<cryptoDTO> CompararListaFavoritas(usuarioDTO usuario)
 		{
 			try
 			{
 				// Obtener la lista de favoritos del usuario desde la base de datos
-				List<usuariocrypto> listaFavoritos = ObtenerListaFavoritas();
+				List<usuariocryptoDTO> listaFavoritos = ObtenerListaFavoritas();
 
 				//Verificamos que el usuario tenga criptos favoritas
 				if (listaFavoritos == null || !listaFavoritos.Any())
@@ -251,9 +291,7 @@ namespace CR_YPTO_TPF
 
 					// Interactuamos con la API para obtener los detalles de las criptomonedas favoritas
 					CryptoService interaccionCrypto = new CryptoService();
-					var listaCryptos = interaccionCrypto.GetFavCryptos(listaIdsCriptos);
-
-					return listaCryptos;
+					return interaccionCrypto.GetFavCryptos(listaIdsCriptos);
 				}
 				
 			}
@@ -272,7 +310,7 @@ namespace CR_YPTO_TPF
 			}
 		}
 		// interactúa con el servicio de criptos y retorna el historial
-		public List<cryptohistoria> ObtenerHistorialCripto(string idCrypto)
+		public List<cryptohistoriaDTO> ObtenerHistorialCripto(string idCrypto)
 		{
 			string cacheKey = $"Historial_{idCrypto}";
 			ObjectCache cache = MemoryCache.Default;
@@ -280,12 +318,19 @@ namespace CR_YPTO_TPF
 			// Verificamos si el historial ya está en caché
 			if (cache.Contains(cacheKey))
 			{
-				return (List<cryptohistoria>)cache.Get(cacheKey);
+				var cachedHistorial = (List<cryptohistoria>)cache.Get(cacheKey);
+				return cachedHistorial.Select(ch => new cryptohistoriaDTO
+				{
+					//idUsuario = ch.idUsuario, 
+					idCrypto = ch.idCrypto,
+					PriceUSD = ch.precio,
+					Time = ch.fecha
+				}).ToList();
 			}
 			else
 			{
 				// Si no está en caché, hacemos la solicitud a la API
-				usuario user = GetUsuarioActual();
+				usuarioDTO user = GetUsuarioActual();
 				CryptoService cryptoService = new CryptoService();
 				var historial = cryptoService.Get6MesesHistorial(user.idUsuario, idCrypto);
 
@@ -293,7 +338,14 @@ namespace CR_YPTO_TPF
 				CacheItemPolicy policy = new CacheItemPolicy { AbsoluteExpiration = DateTimeOffset.Now.Add(_cacheDuracion) };
 				cache.Add(cacheKey, historial, policy);
 
-				return historial;
+				// Mapear la lista de cryptohistoria a CryptoHistoriaDTO
+				return historial.Select(ch => new cryptohistoriaDTO
+				{
+					//idUsuario = ch.idUsuario,
+					idCrypto = ch.idCrypto,
+					PriceUSD = ch.precio,
+					Time = ch.fecha
+				}).ToList();
 			}
 			
 		}
@@ -317,8 +369,6 @@ namespace CR_YPTO_TPF
 			else
 			{
 				// Si no están en caché, las obtenemos desde la API
-				try
-				{
 					CryptoService interaccionCrypto = new CryptoService();
 					var listaCryptos = interaccionCrypto.GetAllCryptos();
 
@@ -326,19 +376,6 @@ namespace CR_YPTO_TPF
 					_cache.Add(cacheKey, listaCryptos, DateTimeOffset.Now.Add(_cacheDuracion));
 
 					return listaCryptos;
-				}
-				catch (WebException ex)
-				{
-					log.logger("Error: {0} " + ex.Message);
-					DesactivarSesion();
-					throw new ExcepcionesApi("Error: {0} " + ex.Message);
-				}
-				catch (Exception ex)
-				{
-					log.logger("Error: {0} " + ex.Message);
-					DesactivarSesion();
-					throw new ExcepcionesApi("Error de conexión con el servicio, intente mas tarde");
-				}
 			}
 		}
 	}

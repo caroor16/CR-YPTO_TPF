@@ -9,6 +9,7 @@
       "CR_YPTO_TPF/1.0.0": {
         "dependencies": {
           "FontAwesome.Sharp": "6.3.0",
+          "Microsoft.EntityFrameworkCore": "8.0.8",
           "Microsoft.EntityFrameworkCore.Design": "8.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8",
           "Microsoft.Extensions.Configuration": "8.0.0",

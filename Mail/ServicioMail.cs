@@ -13,7 +13,6 @@ namespace CR_YPTO_TPF.Mail
 		{
 			
 
-
 		}
 	}
 }

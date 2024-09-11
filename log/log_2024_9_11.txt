@@ -1,0 +1,40 @@
+11/09/2024 11:08:38 - Error: The remote server returned an error: (404) Not Found.
+11/09/2024 11:08:38 - La respuesta de la api es nula
+11/09/2024 11:08:38 - Debe ingresar el ID de una criptomoneda
+11/09/2024 11:08:45 - Error: The remote server returned an error: (404) Not Found.
+11/09/2024 11:08:45 - La respuesta de la api es nula
+11/09/2024 11:08:45 - No se encontró la criptomoneda ingresada
+11/09/2024 11:08:51 - Error: The remote server returned an error: (404) Not Found.
+11/09/2024 11:08:51 - La respuesta de la api es nula
+11/09/2024 11:08:51 - No se encontró la criptomoneda ingresada
+11/09/2024 11:17:18 - Error: The remote server returned an error: (404) Not Found.
+11/09/2024 11:17:18 - La respuesta de la api es nula
+11/09/2024 11:17:18 - No se encontró la criptomoneda ingresada
+11/09/2024 11:19:42 - Error: The remote server returned an error: (404) Not Found.
+11/09/2024 11:19:42 - La respuesta de la api es nula
+11/09/2024 11:19:44 - No se encontró la criptomoneda ingresada
+11/09/2024 11:21:48 - Error: The remote server returned an error: (404) Not Found.
+11/09/2024 11:21:48 - La respuesta de la api es nula
+11/09/2024 11:21:49 - No se encontró la criptomoneda ingresada
+11/09/2024 11:22:47 - Debe ingresar el id de una crypto
+11/09/2024 11:22:48 - Debe ingresar el id de una crypto
+11/09/2024 11:22:49 - Debe ingresar el id de una crypto
+11/09/2024 11:22:49 - Debe ingresar el id de una crypto
+11/09/2024 11:22:50 - Debe ingresar el id de una crypto
+11/09/2024 11:22:50 - Debe ingresar el id de una crypto
+11/09/2024 11:22:56 - Error: The remote server returned an error: (404) Not Found.
+11/09/2024 11:22:56 - La respuesta de la api es nula
+11/09/2024 11:27:08 - Error: Host desconocido. (api.coincap.io:443)
+11/09/2024 11:27:08 - Error: {0} Cannot perform runtime binding on a null reference
+11/09/2024 11:35:52 - Error: The remote server returned an error: (404) Not Found.
+11/09/2024 11:35:52 - La respuesta de la api es nula
+11/09/2024 11:35:52 - No se encontró la criptomoneda ingresada
+11/09/2024 11:36:09 - Debe ingresar el id de una crypto
+11/09/2024 11:38:09 - Error: The remote server returned an error: (404) Not Found.
+11/09/2024 11:38:09 - La respuesta de la api es nula
+11/09/2024 11:38:09 - Debe ingresar el ID de una criptomoneda
+11/09/2024 11:38:11 - Debe ingresar el ID de una criptomoneda
+11/09/2024 12:00:10 - Error mostrando alertas: No se puede llamar a Invoke o a BeginInvoke en un control hasta que se haya creado el identificador de ventana.
+11/09/2024 12:00:29 - Error: The remote server returned an error: (404) Not Found.
+11/09/2024 12:00:29 - La respuesta de la api es nula
+11/09/2024 12:00:29 - No se encontró la criptomoneda ingresada

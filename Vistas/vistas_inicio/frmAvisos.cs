@@ -36,7 +36,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			try
 			{
 				// Mostrar el umbral del usuario en pantalla
-				usuario usuario = fachada.GetUsuarioActual();
+				usuarioDTO usuario = fachada.GetUsuarioActual();
 				string umbralUs = usuario.umbral.ToString();
 
 				// Etiqueta para mostrar el umbral

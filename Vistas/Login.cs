@@ -18,6 +18,7 @@ namespace CR_YPTO_TPF.Vistas
 		public Login()
 		{
 			InitializeComponent();
+			MostrarMensajeEnPanel(panel1, "", Color.Red);
 		}
 
 		// BOTONES 
@@ -79,6 +80,7 @@ namespace CR_YPTO_TPF.Vistas
 
 		private void btnregistrarse_Click(object sender, EventArgs e)
 		{
+			MostrarMensajeEnPanel(panel1, "", Color.Red);
 			// Crear una instancia del formulario registrarse y pasarle el repositorio de usuario
 			registrarse form = new registrarse();
 
