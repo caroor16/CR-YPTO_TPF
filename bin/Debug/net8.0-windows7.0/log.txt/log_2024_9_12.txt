@@ -1,0 +1,2 @@
+12/09/2024 9:35:06 - Error mostrando alertas: No se puede llamar a Invoke o a BeginInvoke en un control hasta que se haya creado el identificador de ventana.
+12/09/2024 9:44:47 - Error mostrando alertas: No se puede llamar a Invoke o a BeginInvoke en un control hasta que se haya creado el identificador de ventana.

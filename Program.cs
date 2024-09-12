@@ -1,12 +1,18 @@
-using CR_YPTO_TPF.Vistas;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using System;
-using System.IO;
-using System.Windows.Forms;
+using Microsoft.Extensions.Hosting;
+using Quartz;
+using Quartz.Impl;
+using Quartz.Logging;
+using System.Collections.Specialized;
+using System.Globalization;
+using System.Net.Mail;
+using System.Net;
 using CR_YPTO_TPF.DAL;
+using CR_YPTO_TPF.DAL.framework;
+using CR_YPTO_TPF.DTOs;
+using CR_YPTO_TPF.Vistas;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using static Quartz.Logging.OperationName;
 using CR_YPTO_TPF.DAL.framework;
 using CR_YPTO_TPF.Api;
 
@@ -21,9 +27,9 @@ namespace CR_YPTO_TPF
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
-			var services = ConfigureServices();
+			var servicesM = ConfigureServices();
 
-			using (var serviceProvider = services.BuildServiceProvider())
+			using (var serviceProvider = servicesM.BuildServiceProvider())
 			{
 				var loginForm = serviceProvider.GetRequiredService<Login>();
 				Application.Run(loginForm);
@@ -46,11 +52,6 @@ namespace CR_YPTO_TPF
 			// Registrar Formularios
 			services.AddScoped<Login>();
 			services.AddScoped<registrarse>();
-
-			//// Api
-			//// Registrar HttpClient y el servicio de criptomonedas
-			//services.AddSingleton<IApiResponsive, ApiReponsive>();
-
 
 			return services;
 		}

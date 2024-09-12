@@ -11,9 +11,10 @@ namespace CR_YPTO_TPF.Vistas
 {
 	public partial class Login : Form
 	{
-		
+
 		fachada fachada = new fachada();
 		log log = new log(@"C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\log");
+
 		public static extern bool ReleaseCapture();
 		public Login()
 		{
@@ -61,6 +62,7 @@ namespace CR_YPTO_TPF.Vistas
 						form.Show();
 						this.Hide();
 
+						MostrarMensajeEnPanel(panel1, "", Color.Red);
 						form.FormClosing += frm_closing;
 					}
 				}
@@ -129,5 +131,6 @@ namespace CR_YPTO_TPF.Vistas
 			panel.Controls.Add(lblMensaje);
 		}
 
+		
 	}
 }

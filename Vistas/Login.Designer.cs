@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
 			label1 = new Label();
-			label2 = new Label();
 			iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
 			label3 = new Label();
 			label4 = new Label();
@@ -39,6 +38,7 @@
 			btnregistrarse = new FontAwesome.Sharp.IconButton();
 			btncancelar = new FontAwesome.Sharp.IconButton();
 			panel1 = new Panel();
+			label2 = new Label();
 			((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
 			SuspendLayout();
 			// 
@@ -50,16 +50,6 @@
 			label1.Name = "label1";
 			label1.Size = new Size(245, 243);
 			label1.TabIndex = 0;
-			// 
-			// label2
-			// 
-			label2.BackColor = Color.SteelBlue;
-			label2.ForeColor = Color.White;
-			label2.Location = new Point(21, 176);
-			label2.Name = "label2";
-			label2.Size = new Size(201, 25);
-			label2.TabIndex = 1;
-			label2.Text = "SEGUIMIENTO DE CR-YPTO";
 			// 
 			// iconPictureBox1
 			// 
@@ -156,11 +146,22 @@
 			panel1.Size = new Size(289, 30);
 			panel1.TabIndex = 18;
 			// 
+			// label2
+			// 
+			label2.BackColor = Color.SteelBlue;
+			label2.ForeColor = Color.White;
+			label2.Location = new Point(16, 181);
+			label2.Name = "label2";
+			label2.Size = new Size(226, 25);
+			label2.TabIndex = 2;
+			label2.Text = "SEGUIMIENTO DE CR-YPTO-SS";
+			// 
 			// Login
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(586, 243);
+			Controls.Add(label2);
 			Controls.Add(panel1);
 			Controls.Add(btningresar);
 			Controls.Add(btnregistrarse);
@@ -170,7 +171,6 @@
 			Controls.Add(label4);
 			Controls.Add(label3);
 			Controls.Add(iconPictureBox1);
-			Controls.Add(label2);
 			Controls.Add(label1);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;
 			Name = "Login";
@@ -184,7 +184,6 @@
 		#endregion
 
 		private Label label1;
-		private Label label2;
 		private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
 		private Label label3;
 		private Label label4;
@@ -194,5 +193,6 @@
 		private FontAwesome.Sharp.IconButton btnregistrarse;
 		private FontAwesome.Sharp.IconButton btncancelar;
 		private Panel panel1;
+		private Label label2;
 	}
 }

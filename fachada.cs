@@ -206,6 +206,12 @@ namespace CR_YPTO_TPF
 			return criptosSuperanUmbral; // Retornar la lista con las criptos que superan el umbral
 		}
 
+		//correo
+		public void correosAlertas()
+		{
+
+		}
+
 
 
 		//			###########  VENTANA FAVORITOS  (cryptos agregadas a favoritos - se puede agregar o eliminar selección)  
@@ -304,9 +310,8 @@ namespace CR_YPTO_TPF
 			catch (Exception ex)
 			{
 				log.logger("Error: {0} " + ex.Message);
-				DesactivarSesion();
 				MessageBox.Show("Error de conexión con el servicio, intente más tarde");
-				throw new ExcepcionesApi("Error de conexión con el servicio"); 
+				return new List<cryptoDTO>(); //lista vacía
 			}
 		}
 		// interactúa con el servicio de criptos y retorna el historial

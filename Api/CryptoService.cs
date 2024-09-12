@@ -36,6 +36,13 @@ namespace CR_YPTO_TPF.Api
 		public List<cryptoDTO> GetAllCryptos()
 		{
 			var lista = new List<cryptoDTO>();
+
+			if (dataAccessor == null || dataAccessor.data == null)
+			{
+				MessageBox.Show("Error de conexión con el servicio, intente más tarde");
+				return lista; 
+			}
+
 			foreach (var bResponseItem in dataAccessor.data)
 			{
 				var objetoDTO = new cryptoDTO(bResponseItem.id.ToString(), bResponseItem.name.ToString(), bResponseItem.rank.ToString(), bResponseItem.priceUsd.ToString(), bResponseItem.symbol.ToString(), bResponseItem.changePercent24Hr.ToString());

@@ -14,6 +14,6 @@ namespace CR_YPTO_TPF.Api
 
 		List<cryptoDTO> GetAllCryptos();
 
-		//List<cryptohistoria> Get6MonthHistoryFrom(string cripto);
+		//List<cryptohistoria> Get6MesesHistorial(string cripto);
 	}
 }

@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\CR_YPTO_TPF.csproj",
-        "projectName": "CR_YPTO_TPF",
+        "projectName": "CR-YPTO-SS",
         "projectPath": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\CR_YPTO_TPF.csproj",
         "packagesPath": "C:\\Users\\Carolina r\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\obj\\",
@@ -22,15 +22,16 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0-windows"
+          "net8.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0-windows7.0": {
-            "targetAlias": "net8.0-windows",
+            "targetAlias": "net8.0-windows7.0",
             "projectReferences": {}
           }
         },
@@ -47,7 +48,7 @@
       },
       "frameworks": {
         "net8.0-windows7.0": {
-          "targetAlias": "net8.0-windows",
+          "targetAlias": "net8.0-windows7.0",
           "dependencies": {
             "FontAwesome.Sharp": {
               "target": "Package",
@@ -98,6 +99,10 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "Quartz": {
+              "target": "Package",
+              "version": "[3.13.0, )"
             },
             "ScottPlot": {
               "target": "Package",

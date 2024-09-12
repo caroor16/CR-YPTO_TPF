@@ -20,7 +20,7 @@ namespace CR_YPTO_TPF
 
 		public void logger(string mensaje)  //método para guardar los mensajes
 		{
-			string path = @"C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\log";
+			string path = System.IO.Path.Combine(Environment.CurrentDirectory,"log.txt");
 
 			log oLog = new log(path);
 			oLog.Add(mensaje);

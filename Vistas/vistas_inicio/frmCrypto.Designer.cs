@@ -57,9 +57,9 @@
 			label2.ForeColor = Color.White;
 			label2.Location = new Point(14, -1);
 			label2.Name = "label2";
-			label2.Size = new Size(173, 25);
+			label2.Size = new Size(189, 25);
 			label2.TabIndex = 1;
-			label2.Text = "Gráfico de cr-yptos";
+			label2.Text = "Gráfico de cr-ypto-ss";
 			// 
 			// textidcrypto
 			// 
@@ -75,7 +75,7 @@
 			dataGridView1.AllowUserToOrderColumns = true;
 			dataGridView1.BackgroundColor = Color.White;
 			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridView1.Location = new Point(46, 493);
+			dataGridView1.Location = new Point(46, 475);
 			dataGridView1.Name = "dataGridView1";
 			dataGridView1.RowHeadersWidth = 51;
 			dataGridView1.Size = new Size(948, 200);

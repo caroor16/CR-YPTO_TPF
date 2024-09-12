@@ -1456,6 +1456,22 @@
           }
         }
       },
+      "Quartz/3.13.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "2.1.1"
+        },
+        "compile": {
+          "lib/net6.0/Quartz.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Quartz.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "ScottPlot/4.1.59": {
         "type": "package",
         "dependencies": {
@@ -4237,6 +4253,27 @@
         "pomelo.entityframeworkcore.mysql.nuspec"
       ]
     },
+    "Quartz/3.13.0": {
+      "sha512": "ddD1CPjWcDMbKdAhzuna3Ng23Sdv1YtuHbFMdAAFw0eBEj9jnadYkDWiKGo/c7BMnbI/ruuyd370sKVgdMCkDA==",
+      "type": "package",
+      "path": "quartz/3.13.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/Quartz.dll",
+        "lib/net462/Quartz.xml",
+        "lib/net472/Quartz.dll",
+        "lib/net472/Quartz.xml",
+        "lib/net6.0/Quartz.dll",
+        "lib/net6.0/Quartz.xml",
+        "lib/netstandard2.0/Quartz.dll",
+        "lib/netstandard2.0/Quartz.xml",
+        "quartz-logo-small.png",
+        "quartz.3.13.0.nupkg.sha512",
+        "quartz.nuspec",
+        "quick-start.md"
+      ]
+    },
     "ScottPlot/4.1.59": {
       "sha512": "zUEBIW6rN6T6SoG8JGK4EGiwc94wX4iz1PFEGyAqRjGlnwwvHCCNdVWcNoQ/3u0rm8SJQQMD+AgT/2aoJUHLGQ==",
       "type": "package",
@@ -5482,6 +5519,7 @@
       "Microsoft.Extensions.Logging >= 8.0.0",
       "Newtonsoft.Json >= 13.0.3",
       "Pomelo.EntityFrameworkCore.MySql >= 8.0.2",
+      "Quartz >= 3.13.0",
       "ScottPlot >= 4.1.59",
       "ScottPlot.WinForms >= 4.1.59",
       "System.Runtime.Caching >= 8.0.0"
@@ -5495,7 +5533,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\CR_YPTO_TPF.csproj",
-      "projectName": "CR_YPTO_TPF",
+      "projectName": "CR-YPTO-SS",
       "projectPath": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\CR_YPTO_TPF.csproj",
       "packagesPath": "C:\\Users\\Carolina r\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\obj\\",
@@ -5509,15 +5547,16 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0-windows"
+        "net8.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
-          "targetAlias": "net8.0-windows",
+          "targetAlias": "net8.0-windows7.0",
           "projectReferences": {}
         }
       },
@@ -5534,7 +5573,7 @@
     },
     "frameworks": {
       "net8.0-windows7.0": {
-        "targetAlias": "net8.0-windows",
+        "targetAlias": "net8.0-windows7.0",
         "dependencies": {
           "FontAwesome.Sharp": {
             "target": "Package",
@@ -5585,6 +5624,10 @@
           "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
             "version": "[8.0.2, )"
+          },
+          "Quartz": {
+            "target": "Package",
+            "version": "[3.13.0, )"
           },
           "ScottPlot": {
             "target": "Package",

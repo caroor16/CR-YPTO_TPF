@@ -93,12 +93,10 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 				var respuesta = fachada.ObtenerHistorialCripto(textidcrypto.Text.ToLower());
 				if (textidcrypto.Text.ToLower() == "")
 				{
-					log.logger("Debe ingresar el ID de una criptomoneda");
 					MostrarMensajeEnPanel(panel1, "Debe ingresar el ID de una criptomoneda", Color.Red);
 				}
 				else if (respuesta.Count == 0 ) //verifica si se encontraron resultados
 				{
-					log.logger("No se encontró la criptomoneda ingresada");
 					MostrarMensajeEnPanel(panel1, "No se encontró la criptomoneda ingresada", Color.Red);
 				}
 				else

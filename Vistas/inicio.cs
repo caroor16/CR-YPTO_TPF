@@ -106,6 +106,7 @@ namespace CR_YPTO_TPF.Vistas
 
 		}
 
+
 		//extras
 		private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
 		{ }
