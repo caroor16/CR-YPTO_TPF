@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CR_YPTO_TPF", "CR-YPTO_TPF\CR_YPTO_TPF.csproj", "{2E70366B-6CA2-428A-A8B2-57E6FC12437B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E70366B-6CA2-428A-A8B2-57E6FC12437B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E70366B-6CA2-428A-A8B2-57E6FC12437B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E70366B-6CA2-428A-A8B2-57E6FC12437B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E70366B-6CA2-428A-A8B2-57E6FC12437B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E0381BC-2A52-47B2-813B-241B7A4BD627}
+	EndGlobalSection
+EndGlobal
