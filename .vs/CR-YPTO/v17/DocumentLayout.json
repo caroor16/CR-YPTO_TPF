@@ -3,66 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\api\\cryptoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\api\\cryptoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\domain\\usuariocrypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\domain\\usuariocrypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\domain\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\domain\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\domain\\alerta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\domain\\alerta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\api\\icryptoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\api\\icryptoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\api\\iapiresponsive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\api\\iapiresponsive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\api\\apireponsive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\api\\apireponsive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\api\\excepciones\\excepcionesapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\api\\excepciones\\excepcionesapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\vistas\\registrarse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\vistas\\registrarse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\vistas\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\vistas\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\vistas\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\vistas\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\vistas\\vistas_inicio\\frmusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\vistas\\vistas_inicio\\frmusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\vistas\\vistas_inicio\\frmmodouso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\vistas\\vistas_inicio\\frmmodouso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\vistas\\vistas_inicio\\frmfavoritos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\vistas\\vistas_inicio\\frmfavoritos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\fachada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\fachada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|c:\\users\\carolina r\\source\\repos\\proyectos\\proyecto-taller\\cr-ypto\\cr-ypto_tpf\\assembly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E70366B-6CA2-428A-A8B2-57E6FC12437B}|CR-YPTO_TPF\\CR_YPTO_TPF.csproj|solutionrelative:cr-ypto_tpf\\assembly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -74,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -93,189 +33,12 @@
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "usuariocrypto.cs",
-              "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Domain\\usuariocrypto.cs",
-              "RelativeDocumentMoniker": "CR-YPTO_TPF\\Domain\\usuariocrypto.cs",
-              "ToolTip": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Domain\\usuariocrypto.cs",
-              "RelativeToolTip": "CR-YPTO_TPF\\Domain\\usuariocrypto.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:33:44.338Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Domain\\usuario.cs",
-              "RelativeDocumentMoniker": "CR-YPTO_TPF\\Domain\\usuario.cs",
-              "ToolTip": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Domain\\usuario.cs",
-              "RelativeToolTip": "CR-YPTO_TPF\\Domain\\usuario.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:33:41.554Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "alerta.cs",
-              "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Domain\\alerta.cs",
-              "RelativeDocumentMoniker": "CR-YPTO_TPF\\Domain\\alerta.cs",
-              "ToolTip": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Domain\\alerta.cs",
-              "RelativeToolTip": "CR-YPTO_TPF\\Domain\\alerta.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:33:39.494Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ICryptoService.cs",
-              "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Api\\ICryptoService.cs",
-              "RelativeDocumentMoniker": "CR-YPTO_TPF\\Api\\ICryptoService.cs",
-              "ToolTip": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Api\\ICryptoService.cs",
-              "RelativeToolTip": "CR-YPTO_TPF\\Api\\ICryptoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:33:34.626Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IApiResponsive.cs",
-              "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Api\\IApiResponsive.cs",
-              "RelativeDocumentMoniker": "CR-YPTO_TPF\\Api\\IApiResponsive.cs",
-              "ToolTip": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Api\\IApiResponsive.cs",
-              "RelativeToolTip": "CR-YPTO_TPF\\Api\\IApiResponsive.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:33:33.695Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CryptoService.cs",
-              "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Api\\CryptoService.cs",
-              "RelativeDocumentMoniker": "CR-YPTO_TPF\\Api\\CryptoService.cs",
-              "ToolTip": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Api\\CryptoService.cs",
-              "RelativeToolTip": "CR-YPTO_TPF\\Api\\CryptoService.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAMwE8AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:32:32.619Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ApiReponsive.cs",
-              "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Api\\ApiReponsive.cs",
-              "RelativeDocumentMoniker": "CR-YPTO_TPF\\Api\\ApiReponsive.cs",
-              "ToolTip": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Api\\ApiReponsive.cs",
-              "RelativeToolTip": "CR-YPTO_TPF\\Api\\ApiReponsive.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAowDMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:32:31.238Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ExcepcionesApi.cs",
-              "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Api\\excepciones\\ExcepcionesApi.cs",
-              "RelativeDocumentMoniker": "CR-YPTO_TPF\\Api\\excepciones\\ExcepcionesApi.cs",
-              "ToolTip": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Api\\excepciones\\ExcepcionesApi.cs",
-              "RelativeToolTip": "CR-YPTO_TPF\\Api\\excepciones\\ExcepcionesApi.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:32:15.536Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "registrarse.cs",
-              "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Vistas\\registrarse.cs",
-              "RelativeDocumentMoniker": "CR-YPTO_TPF\\Vistas\\registrarse.cs",
-              "ToolTip": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Vistas\\registrarse.cs",
-              "RelativeToolTip": "CR-YPTO_TPF\\Vistas\\registrarse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:32:10.941Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Login.cs",
-              "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Vistas\\Login.cs",
-              "RelativeDocumentMoniker": "CR-YPTO_TPF\\Vistas\\Login.cs",
-              "ToolTip": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Vistas\\Login.cs",
-              "RelativeToolTip": "CR-YPTO_TPF\\Vistas\\Login.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:32:07.317Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "inicio.cs",
-              "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Vistas\\inicio.cs",
-              "RelativeDocumentMoniker": "CR-YPTO_TPF\\Vistas\\inicio.cs",
-              "ToolTip": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Vistas\\inicio.cs",
-              "RelativeToolTip": "CR-YPTO_TPF\\Vistas\\inicio.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:32:00.656Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "frmUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Vistas\\vistas_inicio\\frmUsuario.cs",
-              "RelativeDocumentMoniker": "CR-YPTO_TPF\\Vistas\\vistas_inicio\\frmUsuario.cs",
-              "ToolTip": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Vistas\\vistas_inicio\\frmUsuario.cs",
-              "RelativeToolTip": "CR-YPTO_TPF\\Vistas\\vistas_inicio\\frmUsuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:31:48.563Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "frmModoUso.cs",
-              "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Vistas\\vistas_inicio\\frmModoUso.cs",
-              "RelativeDocumentMoniker": "CR-YPTO_TPF\\Vistas\\vistas_inicio\\frmModoUso.cs",
-              "ToolTip": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Vistas\\vistas_inicio\\frmModoUso.cs",
-              "RelativeToolTip": "CR-YPTO_TPF\\Vistas\\vistas_inicio\\frmModoUso.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:31:42.316Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "frmFavoritos.cs",
-              "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Vistas\\vistas_inicio\\frmFavoritos.cs",
-              "RelativeDocumentMoniker": "CR-YPTO_TPF\\Vistas\\vistas_inicio\\frmFavoritos.cs",
-              "ToolTip": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Vistas\\vistas_inicio\\frmFavoritos.cs",
-              "RelativeToolTip": "CR-YPTO_TPF\\Vistas\\vistas_inicio\\frmFavoritos.cs",
-              "ViewState": "AgIAAMYAAAAAAAAAAAAowFwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:31:19.257Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Fachada.cs",
-              "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Fachada.cs",
-              "RelativeDocumentMoniker": "CR-YPTO_TPF\\Fachada.cs",
-              "ToolTip": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Fachada.cs",
-              "RelativeToolTip": "CR-YPTO_TPF\\Fachada.cs",
-              "ViewState": "AgIAAB0BAAAAAAAAAAAAADgBAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:29:52.733Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
               "Title": "Assembly.cs",
               "DocumentMoniker": "C:\\Users\\Carolina r\\source\\repos\\proyectos\\PROYECTO-TALLER\\CR-YPTO\\CR-YPTO_TPF\\Assembly.cs",
               "RelativeDocumentMoniker": "CR-YPTO_TPF\\Assembly.cs",
@@ -283,7 +46,8 @@
               "RelativeToolTip": "CR-YPTO_TPF\\Assembly.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T19:22:54.593Z"
+              "WhenOpened": "2024-09-27T19:22:54.593Z",
+              "EditorCaption": ""
             }
           ]
         }
