@@ -18,8 +18,8 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 {
 	public partial class frmFavoritos : Form
 	{
-		fachada fachada = new fachada();
-		log log = new log(@"C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\log");
+		Fachada fachada = new Fachada();
+		private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
 
 		NumberFormatInfo provider = new NumberFormatInfo();  //para dar formato a los números
@@ -38,7 +38,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 
 			if (criptoId.Length == 0)
 			{
-				log.logger("Debe ingresar el id de una crypto");
+				//Log.logger("Debe ingresar el id de una crypto");
 				MostrarMensajeEnPanel(panel1, "Debe ingresar el id de una crypto", Color.Black);
 				return;
 			}
@@ -54,7 +54,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			}
 
 			//obtenemos el usuario
-			usuarioDTO objetoUsuario = fachada.GetUsuarioActual();
+			UsuarioDTO objetoUsuario = fachada.GetUsuarioActual();
 
 			//ya está como favorito?
 			if (!fachada.ExisteCripto(criptoId)) //si no está en favs
@@ -72,7 +72,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 				}
 				catch (Exception ex)
 				{
-					log.logger($"Error al agregar la cripto: {ex.Message}");
+					log.Error($"Error al agregar la cripto: {ex.Message}");
 					MostrarMensajeEnPanel(panel1, $"Error al agregar la cripto: {ex.Message}", Color.Red);
 				}
 			}
@@ -90,13 +90,13 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 
 			if (criptoId.Length == 0)
 			{
-				log.logger("Debe ingresar el id de una crypto");
+				log.Error("Debe ingresar el id de una crypto");
 				MostrarMensajeEnPanel(panel1, "Debe ingresar el id de una crypto", Color.Black);
 				return;
 			}
 
 			//obtenemos el usuario
-			usuarioDTO objetoUsuario = fachada.GetUsuarioActual();
+			UsuarioDTO objetoUsuario = fachada.GetUsuarioActual();
 
 			//ya está como favorito?
 			if (fachada.ExisteCripto(criptoId)) //si está en favs
@@ -113,8 +113,8 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 				}
 				catch (Exception ex)
 				{
-				log.logger($"Error al agregar la cripto: {ex.Message}");
-				MostrarMensajeEnPanel(panel1, $"Error al agregar la cripto: {ex.Message}", Color.Red);
+					//Log.logger($"Error al agregar la cripto: {ex.Message}");
+					MostrarMensajeEnPanel(panel1, $"Error al agregar la cripto: {ex.Message}", Color.Red);
 				}
 			}
 			else
@@ -130,7 +130,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 		public void mostrarDataFavoritas()
 		{
 			//obtenemos el usuario
-			usuarioDTO objetoUsuario = fachada.GetUsuarioActual();
+			UsuarioDTO objetoUsuario = fachada.GetUsuarioActual();
 			//obtenemos las lista con todas las criptos favoritas
 			var listaCryptosFav = fachada.CompararListaFavoritas(objetoUsuario);
 
@@ -153,14 +153,14 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			foreach (var crypto in listaCryptosFav)  //itera sobre las fav para la barra del gráfico
 			{
 				i++;
-				double value = double.Parse(crypto.PriceUSD, provider);
+				double value = double.Parse(crypto.priceUSD, provider);
 
 				ScottPlot.Plottable.Bar bar = new()
 				{
 					Value = value,
 					Position = i,
 					FillColor = ScottPlot.Palette.Category10.GetColor(i),
-					Label = crypto.Name, //nombre de la cripto
+					Label = crypto.name, //nombre de la cripto
 					LineWidth = 4,
 					LineColor = ScottPlot.Palette.Category10.GetColor(i),
 				};

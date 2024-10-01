@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CR_YPTO_TPF.DTOs
 {
-	internal class alertaDTO
+	internal class AlertaDTO
 	{
 	}
 }

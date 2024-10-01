@@ -1,2 +1,8 @@
 12/09/2024 9:35:06 - Error mostrando alertas: No se puede llamar a Invoke o a BeginInvoke en un control hasta que se haya creado el identificador de ventana.
 12/09/2024 9:44:47 - Error mostrando alertas: No se puede llamar a Invoke o a BeginInvoke en un control hasta que se haya creado el identificador de ventana.
+12/09/2024 19:44:44 - Debe ingresar el id de una crypto
+12/09/2024 19:44:45 - Debe ingresar el id de una crypto
+12/09/2024 19:45:29 - Error: The remote server returned an error: (404) Not Found.
+12/09/2024 19:45:29 - La respuesta de la api es nula
+12/09/2024 22:08:07 - Error: The remote server returned an error: (429) Too Many Requests.
+12/09/2024 22:08:07 - Error: {0} Cannot perform runtime binding on a null reference

@@ -11,7 +11,7 @@ namespace CR_YPTO_TPF.Mail
 {
 	public class ServicioMail : IServicioMail
 	{
-		fachada fachada = new fachada();
+		Fachada fachada = new Fachada();
 		public void mandarMail(string mensaje, string correo)
 		{
 			string correoOrigen = "";

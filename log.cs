@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace CR_YPTO_TPF
 {
-	public class log
+	public class Log
 	{
 		private string Path = "";
 
 
-		public log(string Path)
+		public Log(string Path)
 		{
 			this.Path = Path;
 		}
@@ -22,7 +22,7 @@ namespace CR_YPTO_TPF
 		{
 			string path = System.IO.Path.Combine(Environment.CurrentDirectory,"log.txt");
 
-			log oLog = new log(path);
+			Log oLog = new Log(path);
 			oLog.Add(mensaje);
 		}
 

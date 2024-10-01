@@ -13,7 +13,7 @@ namespace CR_YPTO_TPF.Api
 {
 	public class CryptoService : ICryptoService
 	{
-		log log = new log(@"C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\log");
+		private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
 		public static string assetsUrl = "https://api.coincap.io/v2/assets";
 		public static string history = "https://api.coincap.io/v2/assets/{0}/history?interval=d1";
@@ -33,9 +33,9 @@ namespace CR_YPTO_TPF.Api
 			DataAccessor = response.data;
 		}
 
-		public List<cryptoDTO> GetAllCryptos()
+		public List<CryptoDTO> GetAllCryptos()
 		{
-			var lista = new List<cryptoDTO>();
+			var lista = new List<CryptoDTO>();
 
 			if (dataAccessor == null || dataAccessor.data == null)
 			{
@@ -45,7 +45,7 @@ namespace CR_YPTO_TPF.Api
 
 			foreach (var bResponseItem in dataAccessor.data)
 			{
-				var objetoDTO = new cryptoDTO(bResponseItem.id.ToString(), bResponseItem.name.ToString(), bResponseItem.rank.ToString(), bResponseItem.priceUsd.ToString(), bResponseItem.symbol.ToString(), bResponseItem.changePercent24Hr.ToString());
+				var objetoDTO = new CryptoDTO(bResponseItem.id.ToString(), bResponseItem.name.ToString(), bResponseItem.rank.ToString(), bResponseItem.priceUsd.ToString(), bResponseItem.symbol.ToString(), bResponseItem.changePercent24Hr.ToString());
 				lista.Add(objetoDTO);
 			}
 			return lista;
@@ -53,16 +53,16 @@ namespace CR_YPTO_TPF.Api
 
 		}
 
-		public List<cryptoDTO> GetFavCryptos(List<String> pLista)
+		public List<CryptoDTO> GetFavCryptos(List<String> pLista)
 		{
-			var lista = new List<cryptoDTO>();
+			var lista = new List<CryptoDTO>();
 			foreach (var elemento in pLista)
 			{
 				foreach (var bResponseItem in dataAccessor.data)
 				{
 					if (elemento == bResponseItem.id.ToString())
 					{
-						var objeto = new cryptoDTO(bResponseItem.id.ToString(), bResponseItem.name.ToString(), bResponseItem.rank.ToString(), bResponseItem.priceUsd.ToString(), bResponseItem.symbol.ToString(), bResponseItem.changePercent24Hr.ToString());
+						var objeto = new CryptoDTO(bResponseItem.id.ToString(), bResponseItem.name.ToString(), bResponseItem.rank.ToString(), bResponseItem.priceUsd.ToString(), bResponseItem.symbol.ToString(), bResponseItem.changePercent24Hr.ToString());
 						lista.Add(objeto);
 					}
 				}
@@ -103,7 +103,7 @@ namespace CR_YPTO_TPF.Api
 			}
 			else
 			{
-				log.logger("La respuesta de la api es nula");
+				log.Error("La respuesta de la api es nula");
 				return historial; //devuelve una lista vacía
 			}
 		}
@@ -123,7 +123,7 @@ namespace CR_YPTO_TPF.Api
 			{
 				if (ex.Response is null)
 				{
-					log.logger("Error: {0} " + ex.Message);
+					log.Error("Error: {0} " + ex.Message);
 					MessageBox.Show("Error con el servicio de criptomonedas");
 					
 					throw new ExcepcionesApi("Error con el servicio de criptomonedas");
@@ -143,7 +143,7 @@ namespace CR_YPTO_TPF.Api
 			}
 			catch (Exception ex)
 			{
-				log.logger("Error: {0} " + ex.Message);
+				log.Error("Error: {0} " + ex.Message);
 				MessageBox.Show("Ha ocurrido un error. Por favor, intente nuevamente más tarde.");
 				return new List<cryptohistoria>();
 			}

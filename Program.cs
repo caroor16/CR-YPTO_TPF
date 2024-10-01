@@ -20,6 +20,7 @@ namespace CR_YPTO_TPF
 {
 	static class Program
 	{
+
 		[STAThread]
 		static void Main()
 		{
@@ -47,7 +48,7 @@ namespace CR_YPTO_TPF
 			services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
 			// Registrar la clase fachada
-			services.AddScoped<fachada>();
+			services.AddScoped<Fachada>();
 
 			// Registrar Formularios
 			services.AddScoped<Login>();

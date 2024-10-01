@@ -17,7 +17,7 @@ namespace CR_YPTO_TPF.Vistas
 	public partial class registrarse : Form
 	{
 
-		fachada fachada = new fachada();
+		Fachada fachada = new Fachada();
 		public registrarse()
 		{
 			InitializeComponent();

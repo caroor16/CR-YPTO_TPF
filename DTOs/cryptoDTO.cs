@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CR_YPTO_TPF.DTOs
 {
-	public class cryptoDTO
+	public class CryptoDTO
 	{
 		// DTO
 		//modelo de dominio: Cypto representa una criptomoneda y contiene las propiedades relevantes
@@ -18,7 +18,7 @@ namespace CR_YPTO_TPF.DTOs
 		private string iSymbol;
 		private string iChangePercent24hs;
 
-		public cryptoDTO(string pid, string pName, string pRank, string pPriceUSD, string pSymbol, string pChangePercent)
+		public CryptoDTO(string pid, string pName, string pRank, string pPriceUSD, string pSymbol, string pChangePercent)
 		{
 			iId = pid;
 			iName = pName;
@@ -27,32 +27,32 @@ namespace CR_YPTO_TPF.DTOs
 			iSymbol = pSymbol;
 			iChangePercent24hs = pChangePercent;
 		}
-		public string Id
+		public string id
 		{
 			get { return iId; }
 			set { iId = value; }
 		}
-		public string Name
+		public string name
 		{
 			get { return iName; }
 			set { iName = value; }
 		}
-		public string Rank
+		public string rank
 		{
 			get { return iRank; }
 			set { iRank = value; }
 		}
-		public string PriceUSD
+		public string priceUSD
 		{
 			get { return iPriceUSD; }
 			set { iPriceUSD = value; }
 		}
-		public string Symbol
+		public string symbol
 		{
 			get { return iSymbol; }
 			set { iSymbol = value; }
 		}
-		public string ChangePercent24hs
+		public string changePercent24hs
 		{
 			get { return iChangePercent24hs; }
 			set { iChangePercent24hs = value; }

@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Forms;
 using ScottPlot;
+using log4net;
 using static ScottPlot.Plottable.PopulationPlot;
 
 namespace CR_YPTO_TPF.Vistas.vistas_inicio
 {
 	public partial class frmCrypto : Form
 	{
-		fachada fachada = new fachada();
-		log log = new log(@"C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\log");
+		Fachada fachada = new Fachada();
+		private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
 		NumberFormatInfo provider = new NumberFormatInfo();
 
 		public frmCrypto()
@@ -41,14 +43,14 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 				foreach (var crypto in respuesta)
 				{
 					i++;
-					double value = double.Parse(crypto.PriceUSD, provider);
+					double value = double.Parse(crypto.priceUSD, provider);
 
 					ScottPlot.Plottable.Bar bar = new()
 					{
 						Value = value,
 						Position = i,
 						FillColor = ScottPlot.Palette.Category10.GetColor(i),
-						Label = crypto.Name,
+						Label = crypto.name,
 						LineWidth = 4,
 						LineColor = ScottPlot.Palette.Category10.GetColor(i),
 					};
@@ -77,6 +79,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			}
 			catch (ExcepcionesApi unaExcepcion)
 			{
+				log.Error("Error: {0} " + unaExcepcion.Message);
 				MessageBox.Show(unaExcepcion.Message);
 				Application.Exit();
 			}
@@ -155,6 +158,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			}
 			catch (ExcepcionesApi unaExcepcion)
 			{
+				log.Error("Error: {0} " + unaExcepcion.Message);
 				MessageBox.Show(unaExcepcion.Message);
 				Application.Exit();
 			}

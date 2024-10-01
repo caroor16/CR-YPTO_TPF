@@ -7,13 +7,15 @@ using CR_YPTO_TPF.DAL.framework;
 using Microsoft.Data.SqlClient;
 using ScottPlot.Renderable;
 
+
 namespace CR_YPTO_TPF.Vistas
 {
 	public partial class Login : Form
 	{
 
-		fachada fachada = new fachada();
-		log log = new log(@"C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\log");
+		Fachada fachada = new Fachada();
+		private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
 
 		public static extern bool ReleaseCapture();
 		public Login()
@@ -55,7 +57,7 @@ namespace CR_YPTO_TPF.Vistas
 					else
 					{
 						// Si el usuario existe y la clave es correcta, permitir el acceso
-						fachada.ActivarSesion(ousuario.idUsuario);
+						Fachada.ActivarSesion(ousuario.idUsuario);
 						MessageBox.Show("Login exitoso.");
 						inicio form = new inicio();
 
@@ -68,13 +70,13 @@ namespace CR_YPTO_TPF.Vistas
 				}
 				catch (SqlException sqlEx) // Captura las excepciones de SQL
 				{
-					log.logger("Error en la conexión a la base de datos. Por favor, verifica la configuración.");
+					log.Error("Error: {0} " + sqlEx.Message);
 					MessageBox.Show("Error en la conexión a la base de datos. Por favor, verifica la configuración.");
 				}
 				catch (Exception ex)
 				{
 					// Manejar cualquier otro tipo de error
-					log.logger("Error: " + ex.Message);
+					log.Error("Error: {0} " + ex.Message);
 					MessageBox.Show("Error: " + ex.Message);
 				}
 			}

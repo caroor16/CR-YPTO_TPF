@@ -20,18 +20,19 @@ using System.Runtime.Caching;
 
 namespace CR_YPTO_TPF
 {
-	public class fachada
+	public class Fachada
 	{
 
 		//para ver si ya contamos con la información de las criptomonedas
 		public ObjectCache _cache = MemoryCache.Default;
 		private TimeSpan _cacheDuracion = TimeSpan.FromHours(12); // Definimos el tiempo de duración en el caché (12 horas)
 
-		log log = new log(@"C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\log");
-		
+		private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+
 		// ######################### MÉTODOS BÁSICOS DEL USUARIO #####################
 		// Obtener el usuario actual
-		public usuarioDTO GetUsuarioActual()
+		public UsuarioDTO GetUsuarioActual()
 		{
 			AppDbContext context = new AppDbContext();
 			UsuarioRepository repoUsuario = new UsuarioRepository(context);
@@ -39,7 +40,7 @@ namespace CR_YPTO_TPF
 			var usuario = repoUsuario.GetUsuarioActual();
 
 			// Mapear Usuario a UsuarioDTO
-			return new usuarioDTO
+			return new UsuarioDTO
 			{
 				idUsuario = usuario.idUsuario,
 				nombre = usuario.nombre,
@@ -52,7 +53,7 @@ namespace CR_YPTO_TPF
 		}
 
 		// Obtener un usuario por su ID
-		public usuarioDTO GetUser(string pidUsuario)
+		public UsuarioDTO GetUser(string pidUsuario)
 		{
 			AppDbContext context = new AppDbContext();
 			UsuarioRepository repoUsuario = new UsuarioRepository(context);
@@ -65,7 +66,7 @@ namespace CR_YPTO_TPF
 			}
 
 			// Mapear Usuario a UsuarioDTO
-			return new usuarioDTO
+			return new UsuarioDTO
 			{
 				idUsuario = usuario.idUsuario,
 				nombre = usuario.nombre,
@@ -177,11 +178,11 @@ namespace CR_YPTO_TPF
 		//		###########	VENTANA AVISOS   (notificaciones por correo y en pantalla)  
 		public List<(string criptoId, decimal cambio24hs)> GetAlertas()
 		{
-			usuarioDTO user = GetUsuarioActual(); // Obtener datos del usuario actual
+			UsuarioDTO user = GetUsuarioActual(); // Obtener datos del usuario actual
 			if (user == null) throw new InvalidOperationException("Usuario no encontrado.");
 
-			List<usuariocryptoDTO> criptosFavoritas = ObtenerListaFavoritas(); // Obtener lista de criptos favoritas del usuario
-			List<cryptoDTO> cryptsTodas = GetCryptosTodas(); // Obtener todas las criptos
+			List<UsuariocryptoDTO> criptosFavoritas = ObtenerListaFavoritas(); // Obtener lista de criptos favoritas del usuario
+			List<CryptoDTO> cryptsTodas = GetCryptosTodas(); // Obtener todas las criptos
 
 			var criptosSuperanUmbral = new List<(string criptoId, decimal cambio24hs)>(); // Lista para criptos que superan el umbral
 
@@ -189,16 +190,16 @@ namespace CR_YPTO_TPF
 			foreach (var criptoFav in criptosFavoritas)
 			{
 				// Buscar la cripto favorita en la lista completa de criptos
-				var criptoDTO = cryptsTodas.FirstOrDefault(c => c.Id == criptoFav.idCrypto);
+				var criptoDTO = cryptsTodas.FirstOrDefault(c => c.id == criptoFav.idCrypto);
 
 				if (criptoDTO != null)
 				{
 					// Convertir el cambio porcentual a decimal y compara con el umbral
-					decimal cambio24hs = Convert.ToDecimal(criptoDTO.ChangePercent24hs, CultureInfo.InvariantCulture);
+					decimal cambio24hs = Convert.ToDecimal(criptoDTO.changePercent24hs, CultureInfo.InvariantCulture);
 					if (Math.Abs(cambio24hs) >= (decimal)user.umbral) // Convertir umbral a decimal para la comparación
 					{
 						// Agregar la cripto y el cambio a la lista si supera el umbral
-						criptosSuperanUmbral.Add((criptoDTO.Id, cambio24hs));
+						criptosSuperanUmbral.Add((criptoDTO.id, cambio24hs));
 					}
 				}
 			}
@@ -247,9 +248,9 @@ namespace CR_YPTO_TPF
 			}
 		}
 
-		public List<usuariocryptoDTO> ObtenerListaFavoritas()
+		public List<UsuariocryptoDTO> ObtenerListaFavoritas()
 		{
-			usuarioDTO user = GetUsuarioActual();
+			UsuarioDTO user = GetUsuarioActual();
 			AppDbContext context = new AppDbContext();
 			UsCryptoRepository repoUsCr = new UsCryptoRepository(context);
 
@@ -257,7 +258,7 @@ namespace CR_YPTO_TPF
 			var listaUsuarioCrypto = repoUsCr.GetCriptosFav(user.idUsuario);
 
 			// Mapear la lista a UsuarioCryptoDTO
-			return listaUsuarioCrypto.Select(uc => new usuariocryptoDTO
+			return listaUsuarioCrypto.Select(uc => new UsuariocryptoDTO
 			{
 				idUsuario = uc.idUsuario,
 				idCrypto = uc.idCrypto
@@ -276,17 +277,17 @@ namespace CR_YPTO_TPF
 
 
 		//compara entre todas las criptos (api) y las criptos favoritas del usuario (bdd)
-		public List<cryptoDTO> CompararListaFavoritas(usuarioDTO usuario)
+		public List<CryptoDTO> CompararListaFavoritas(UsuarioDTO usuario)
 		{
 			try
 			{
 				// Obtener la lista de favoritos del usuario desde la base de datos
-				List<usuariocryptoDTO> listaFavoritos = ObtenerListaFavoritas();
+				List<UsuariocryptoDTO> listaFavoritos = ObtenerListaFavoritas();
 
 				//Verificamos que el usuario tenga criptos favoritas
 				if (listaFavoritos == null || !listaFavoritos.Any())
 				{
-					return new List<cryptoDTO>(); // Si no tiene favoritas, devolvemos una lista vacía
+					return new List<CryptoDTO>(); // Si no tiene favoritas, devolvemos una lista vacía
 				}
 				else
 				{
@@ -303,15 +304,15 @@ namespace CR_YPTO_TPF
 			}
 			catch (WebException ex)
 			{
-				log.logger("Error: {0} " + ex.Message);
+				log.Error("Error: {0} " + ex.Message);
 				DesactivarSesion();
 				throw new ExcepcionesApi("Error: {0} " + ex.Message);
 			}
 			catch (Exception ex)
 			{
-				log.logger("Error: {0} " + ex.Message);
+				log.Error("Error: {0} " + ex.Message);
 				MessageBox.Show("Error de conexión con el servicio, intente más tarde");
-				return new List<cryptoDTO>(); //lista vacía
+				return new List<CryptoDTO>(); //lista vacía
 			}
 		}
 		// interactúa con el servicio de criptos y retorna el historial
@@ -335,7 +336,7 @@ namespace CR_YPTO_TPF
 			else
 			{
 				// Si no está en caché, hacemos la solicitud a la API
-				usuarioDTO user = GetUsuarioActual();
+				UsuarioDTO user = GetUsuarioActual();
 				CryptoService cryptoService = new CryptoService();
 				var historial = cryptoService.Get6MesesHistorial(user.idUsuario, idCrypto);
 
@@ -359,7 +360,7 @@ namespace CR_YPTO_TPF
 		//			VENTANA CRYPTO  (ver todas las criptos y/o una en especial)  
 
 		//todas las criptomonedas
-		public List<cryptoDTO> GetCryptosTodas()
+		public List<CryptoDTO> GetCryptosTodas()
 		{
 			// Método para obtener criptomonedas, ya sea desde el caché o la API
 
@@ -369,7 +370,7 @@ namespace CR_YPTO_TPF
 			if (_cache.Contains(cacheKey))
 			{
 				// Si están en caché, las retornamos
-				return (List<cryptoDTO>)_cache.Get(cacheKey);
+				return (List<CryptoDTO>)_cache.Get(cacheKey);
 			}
 			else
 			{

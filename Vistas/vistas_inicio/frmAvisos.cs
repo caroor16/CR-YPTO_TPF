@@ -12,8 +12,9 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 {
 	public partial class frmAvisos : Form
 	{
-		fachada fachada = new fachada();
-		log log = new log(@"C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\log");
+		Fachada fachada = new Fachada();
+		private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
 		NumberFormatInfo provider = new NumberFormatInfo();
 		DateTime lastAlertaTime = DateTime.Now.AddHours(-24); // Inicializa para evitar errores
 		int j = 0; // Declaración de j
@@ -36,7 +37,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			try
 			{
 				// Mostrar el umbral del usuario en pantalla
-				usuarioDTO usuario = fachada.GetUsuarioActual();
+				UsuarioDTO usuario = fachada.GetUsuarioActual();
 				string umbralUs = usuario.umbral.ToString();
 
 				// Etiqueta para mostrar el umbral
@@ -82,7 +83,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			catch (Exception ex)
 			{
 				// Registrar la excepción para depuración
-				log.logger("Error mostrando alertas: " + ex.Message);
+				log.Error("Error mostrando alertas: " + ex.Message);
 			}
 		}
 
@@ -102,7 +103,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 			catch (Exception ex)
 			{
 				// Registrar el error en los logs
-				log.logger("Error en HandleTimer: " + ex.Message);
+				log.Error("Error en HandleTimer: " + ex.Message);
 			}
 		}
 	}

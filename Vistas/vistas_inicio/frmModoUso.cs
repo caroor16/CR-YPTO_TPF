@@ -16,7 +16,7 @@ namespace CR_YPTO_TPF.Vistas.vistas_inicio
 {
 	public partial class frmModoUso : Form
 	{
-		fachada fachada = new fachada();
+		Fachada fachada = new Fachada();
 
 		public frmModoUso()
 		{

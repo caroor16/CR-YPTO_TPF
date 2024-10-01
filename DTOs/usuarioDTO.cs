@@ -9,7 +9,7 @@ using CR_YPTO_TPF.Domain;
 
 namespace CR_YPTO_TPF.DTOs
 {
-	public class usuarioDTO
+	public class UsuarioDTO
 	{
 		public string idUsuario { get; set; }
 		public string nombre { get; set; }
@@ -20,7 +20,7 @@ namespace CR_YPTO_TPF.DTOs
 		public bool activo { get; set; }
 
 		// Criptomonedas favoritas en formato DTO
-		public List<usuariocryptoDTO> CriptomonedasFavoritas { get; set; }
+		public List<UsuariocryptoDTO> CriptomonedasFavoritas { get; set; }
 	}
 
 

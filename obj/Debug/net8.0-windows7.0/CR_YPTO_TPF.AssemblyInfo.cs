@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CR-YPTO-SS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+754980a6a5b71b40aba4571eb40060acb391fba7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f48a2f82d8a7f50e17ec02f184ec94a5b122c44")]
 [assembly: System.Reflection.AssemblyProductAttribute("CR-YPTO-SS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CR-YPTO-SS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -9,7 +9,7 @@ using CR_YPTO_TPF.Domain;
 
 namespace CR_YPTO_TPF.DTOs
 {
-	public class usuariocryptoDTO
+	public class UsuariocryptoDTO
 	{
 		public string idUsuario { get; set; }
 		public string idCrypto { get; set; }

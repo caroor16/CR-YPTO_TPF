@@ -20,7 +20,7 @@ namespace CR_YPTO_TPF.Vistas
 {
 	public partial class inicio : Form
 	{
-		fachada fachada = new fachada();
+		Fachada fachada = new Fachada();
 
 		private static IconMenuItem MenuActivo = null;
 		private static Form FormularioActivo = null;
@@ -81,7 +81,7 @@ namespace CR_YPTO_TPF.Vistas
 
 		private void cerrarS_Click(object sender, EventArgs e)
 		{
-			fachada.DesactivarSesion();
+			Fachada.DesactivarSesion();
 			MessageBox.Show("Sesión finalizada");
 			this.Close();
 		}

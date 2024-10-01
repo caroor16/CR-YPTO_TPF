@@ -6,13 +6,15 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Net;
+using Microsoft.Extensions.Logging;
 
 
 namespace CR_YPTO_TPF.Api
 {
 	public class ApiReponsive : IApiResponsive
 	{
-		log log = new log(@"C:\Users\Carolina r\source\repos\proyectos\PROYECTO-TALLER\CR-YPTO\CR-YPTO_TPF\log");
+		private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
 		public dynamic data;
 		public dynamic Data
 		{
@@ -20,8 +22,7 @@ namespace CR_YPTO_TPF.Api
 			set { this.data = value; }
 		}
 		public ApiReponsive()
-		{
-
+		{;
 		}
 		public void GetAPIResponseItem(string mUrl)
 		{
@@ -44,11 +45,11 @@ namespace CR_YPTO_TPF.Api
 			}
 			catch (WebException ex)
 			{
-				log.logger("Error: " + ex.Message);
+				log.Error("Error: {0} " + ex.Message);
 			}
 			catch (Exception ex)
 			{
-				log.logger("Error: " + ex.Message);
+				log.Error("Error: {0} " + ex.Message);
 				MessageBox.Show("Cargando...");
 			}
 		}
